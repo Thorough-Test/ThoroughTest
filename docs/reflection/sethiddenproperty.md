@@ -23,7 +23,7 @@ local Fire = Instance.new("Fire")
 
 sethiddenproperty(Fire, "size_xml", 6)
 
-print(gethiddenproperty(Fire, "size_xml")) -- 6 true
+print(Fire.Size) -- 6
 ```
 
 ## Must

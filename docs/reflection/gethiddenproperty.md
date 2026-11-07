@@ -30,6 +30,7 @@ print(gethiddenproperty(Part, "NetworkOwnerV3")) -- 0 true
 
 - Return the value and `false` for normal properties.
 - Return the value and `true` for hidden properties.
+- Read `size_xml` on a `Fire`.
 - Leave a hidden property hidden after reading it.
 - Read `BinaryString` properties.
 - Never return a value for a property that doesn't exist.

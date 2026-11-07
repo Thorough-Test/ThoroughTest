@@ -63,11 +63,12 @@ local Response = request({
 - Return response headers.
 - Keep the game running while it waits.
 - Keep binary data intact in both directions.
-- Follow redirects and decompress gzip.
+- Follow redirects, and decompress gzip when it asked for gzip.
 - Error with no arguments, and never report success for an invalid url.
 
 ## Should
 
+- Decompress gzip when it didn't ask for gzip.
 - Send `Roblox-Game-Id` as the current `game.JobId`.
 - Include the executor name in the `User-Agent`.
 - Support the `Cookies` option.

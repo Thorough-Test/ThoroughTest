@@ -19,7 +19,11 @@ Screen.Parent = gethui()
 
 ## Must
 
-- Return the same container every time, a `BasePlayerGui` or a `Folder`.
+- Return the same container every time, one that can hold UI.
 - Accept UI as children.
 - Not be `PlayerGui` or `CoreGui`.
 - Hide its contents from a game script calling `game:GetDescendants()`.
+
+## Should
+
+- Return a `BasePlayerGui` or a `Folder`, not a `ScreenGui`.

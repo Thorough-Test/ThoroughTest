@@ -31,8 +31,8 @@ print(isfolder("cache")) -- false
 
 - Delete the folder, including one with files in it.
 - Leave files alone.
-- Reject every path that leaves the workspace.
 
 ## Should
 
 - Do nothing for a folder that doesn't exist, instead of erroring.
+- Error on a path outside the workspace, instead of doing nothing.

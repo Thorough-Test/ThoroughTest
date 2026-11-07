@@ -5,9 +5,9 @@ test: "Filesystem: workspace sandbox"
 
 # Workspace sandbox
 
-Scripts should only ever touch the workspace. If a path tries to leave, the function has to refuse it, and that goes for every function that takes a path, reads included. A script reading your files is as bad as a script writing them.
+Scripts should only ever touch the workspace. If a path tries to leave, the function has to refuse it or keep it inside the workspace, and that goes for every function that takes a path, reads included. A script reading your files is as bad as a script writing them.
 
-## Paths that have to fail
+## Paths that can't leave
 
 | Path | Why it's dangerous |
 | --- | --- |
@@ -33,12 +33,13 @@ print(isfile("../../secret.txt")) -- false
 
 ## Must
 
-- Refuse paths that leave the workspace in `writefile`, `appendfile`, `makefolder`, `readfile`, `listfiles`, `loadfile`, `dofile`, `getcustomasset` and `delfile`.
+- Refuse paths that leave the workspace, or keep them inside it, in `writefile`, `appendfile`, `makefolder`, `readfile`, `listfiles`, `loadfile`, `dofile`, and `getcustomasset`.
 - Return `false` or error from `isfile` and `isfolder` for those paths, never `true`.
 - Error on a nil path in all of them.
 - Keep a path starting with `/` inside the workspace.
 
 ## Should
 
+- Error from `delfile` on those paths, instead of doing nothing.
 - Handle `..` and `./` that stay inside the workspace.
 - Treat `\` and `/` as the same thing.

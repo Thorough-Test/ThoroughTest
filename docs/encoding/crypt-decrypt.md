@@ -23,12 +23,12 @@ Decrypts AES data. The data, key and iv are all base64, the same way [crypt.encr
 local Key = base64encode(string.rep("k", 32))
 
 local Encrypted, Iv = crypt.encrypt("secret text", Key)
-print(crypt.decrypt(Encrypted, Key, Iv)) -- secret text
+print(crypt.decrypt(Encrypted, Key, Iv, "CBC")) -- secret text
 ```
 
 ## Must
 
-- Return the original bytes in `CBC` and `CTR`, and with the default mode.
+- Return the original bytes in `CBC` and `CTR`.
 - Match the published AES-256 test vector.
 - Never return the original text with the wrong key.
 - Never return a value for a key that isn't valid.
@@ -36,5 +36,6 @@ print(crypt.decrypt(Encrypted, Key, Iv)) -- secret text
 
 ## Should
 
+- Default to `CBC` when `mode` is left out.
 - Support `CFB`, `OFB`, `ECB` and `GCM`.
 - Error on a key that isn't valid, instead of returning nothing.

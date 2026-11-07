@@ -31,4 +31,4 @@ print(#Bytecode)
 
 ## Should
 
-- Error on a script with no bytecode, instead of returning nothing.
+- Error on a script with no bytecode, instead of returning nothing or an empty string.

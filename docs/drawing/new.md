@@ -62,13 +62,13 @@ print("ready")
 - Keep `TextBounds` accurate and read only. It changes with the text, `Size` and line count.
 - Keep `Outline` and `Center` as separate properties.
 - Destroy objects with `Destroy`.
-- Create and destroy 1000 drawings in under 3 seconds.
 - Draw on its own layer. Building shapes out of Frames in hidden UI doesn't count.
 - Never return a value for a type or a property that doesn't exist.
 
 ## Should
 
 - Have `Remove` as well as `Destroy`, and let a second `Destroy` do nothing.
+- Create and destroy 1000 drawings in under 3 seconds.
 - Return `Font` as the id it was set to.
 - Accept `Centered` and `Outlined` as aliases.
 - Have an `OutlineOpacity` on `Text`.
