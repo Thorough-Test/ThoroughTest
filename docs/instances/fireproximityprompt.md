@@ -17,9 +17,9 @@ Triggers a prompt without walking to it, looking at it or holding the key. The p
 ## Example
 
 ```luau
-local prompt = workspace.Door:FindFirstChildOfClass("ProximityPrompt")
+local Prompt = workspace.Door:FindFirstChildOfClass("ProximityPrompt")
 
-fireproximityprompt(prompt)
+fireproximityprompt(Prompt)
 ```
 
 ## Must

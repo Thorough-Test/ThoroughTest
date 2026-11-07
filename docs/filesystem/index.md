@@ -14,11 +14,11 @@ Executors give scripts a folder called the workspace. Every path is relative to 
 Here's a common pattern for saving settings:
 
 ```luau
-local path = "settings.json"
+local Path = "settings.json"
 local HttpService = game:GetService("HttpService")
 
-local settings = isfile(path) and HttpService:JSONDecode(readfile(path)) or { volume = 1 }
+local Settings = isfile(Path) and HttpService:JSONDecode(readfile(Path)) or { Volume = 1 }
 
-settings.volume = 0.5
-writefile(path, HttpService:JSONEncode(settings))
+Settings.Volume = 0.5
+writefile(Path, HttpService:JSONEncode(Settings))
 ```

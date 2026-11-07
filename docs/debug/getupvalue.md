@@ -18,13 +18,13 @@ Returns the upvalue at `index`, starting at 1. Upvalues are numbered by the orde
 ## Example
 
 ```luau
-local coins = 100
+local Coins = 100
 
-local function addCoin()
-    coins += 1
+local function AddCoin()
+    Coins += 1
 end
 
-print(debug.getupvalue(addCoin, 1)) -- 100
+print(debug.getupvalue(AddCoin, 1)) -- 100
 ```
 
 ## Must

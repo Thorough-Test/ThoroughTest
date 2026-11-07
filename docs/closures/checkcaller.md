@@ -15,12 +15,12 @@ You'll mostly use this inside hooks. Your hook runs for everyone, so this is how
 ## Example
 
 ```luau
-local originalIndex
-originalIndex = hookmetamethod(game, "__index", function(self, key)
-    if key == "WalkSpeed" and not checkcaller() then
+local OriginalIndex
+OriginalIndex = hookmetamethod(game, "__index", function(self, Key)
+    if Key == "WalkSpeed" and not checkcaller() then
         return 16 -- only game scripts receive this
     end
-    return originalIndex(self, key)
+    return OriginalIndex(self, Key)
 end)
 ```
 

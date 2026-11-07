@@ -19,14 +19,14 @@ Replaces a constant, so the function behaves as if its code had a different valu
 ## Example
 
 ```luau
-local function greet()
+local function Greet()
     return "hello"
 end
 
-local index = table.find(debug.getconstants(greet), "hello")
-debug.setconstant(greet, index, "goodbye")
+local Index = table.find(debug.getconstants(Greet), "hello")
+debug.setconstant(Greet, Index, "goodbye")
 
-print(greet()) -- goodbye
+print(Greet()) -- goodbye
 ```
 
 ## Must

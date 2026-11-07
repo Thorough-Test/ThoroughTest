@@ -49,9 +49,9 @@ Use these with `filtergc("table", ...)`.
 ## Example
 
 ```luau
-local onDamage = filtergc("function", { Name = "onDamage" }, true)
+local OnDamage = filtergc("function", { Name = "onDamage" }, true)
 
-local config = filtergc("table", {
+local Config = filtergc("table", {
     Keys = { "WalkSpeed", "JumpPower" },
 }, true)
 ```

@@ -13,9 +13,9 @@ Returns the executor's name and its version. It's the right way to handle someth
 ## Example
 
 ```luau
-local name, version = identifyexecutor()
+local Name, Version = identifyexecutor()
 
-print(`Running on {name} {version}`)
+print(`Running on {Name} {Version}`)
 ```
 
 ## Must

@@ -19,9 +19,9 @@ It's a big list, so if you know what you're looking for, [filtergc](filtergc.md)
 ## Example
 
 ```luau
-for _, value in getgc() do
-    if type(value) == "function" and debug.info(value, "n") == "onDamage" then
-        print("Found it:", value)
+for _, Value in getgc() do
+    if type(Value) == "function" and debug.info(Value, "n") == "onDamage" then
+        print("Found it:", Value)
     end
 end
 ```

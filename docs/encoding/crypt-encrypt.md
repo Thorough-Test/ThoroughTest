@@ -22,10 +22,10 @@ An iv makes the same text encrypt differently each time. Leave it out and a rand
 ## Example
 
 ```luau
-local key = base64encode(string.rep("k", 32))
+local Key = base64encode(string.rep("k", 32))
 
-local encrypted, iv = crypt.encrypt("secret text", key)
-print(encrypted, iv)
+local Encrypted, Iv = crypt.encrypt("secret text", Key)
+print(Encrypted, Iv)
 ```
 
 ## Must

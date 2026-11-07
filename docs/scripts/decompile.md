@@ -19,9 +19,9 @@ TT decompiles a real module, runs the output and checks that it behaves like the
 ## Example
 
 ```luau
-local module = game.ReplicatedStorage.Config
+local Module = game.ReplicatedStorage.Config
 
-writefile("Config.lua", decompile(module))
+writefile("Config.lua", decompile(Module))
 ```
 
 ## Must

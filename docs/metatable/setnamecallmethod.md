@@ -17,14 +17,14 @@ Changes the method name of the current `__namecall`. Any method you call from in
 ## Example
 
 ```luau
-local originalNamecall
-originalNamecall = hookmetamethod(game, "__namecall", function(self, ...)
-    local method = getnamecallmethod()
+local OriginalNamecall
+OriginalNamecall = hookmetamethod(game, "__namecall", function(self, ...)
+    local Method = getnamecallmethod()
     if self == workspace and not checkcaller() then
         print(self:GetFullName())
-        setnamecallmethod(method)
+        setnamecallmethod(Method)
     end
-    return originalNamecall(self, ...)
+    return OriginalNamecall(self, ...)
 end)
 ```
 

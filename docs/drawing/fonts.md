@@ -20,11 +20,11 @@ A table of font names and ids. Use it instead of raw numbers when setting `Font`
 ## Example
 
 ```luau
-local text = Drawing.new("Text")
-text.Text = "print('hi')"
-text.Font = Drawing.Fonts.Monospace
-text.Size = 18
-text.Visible = true
+local Text = Drawing.new("Text")
+Text.Text = "print('hi')"
+Text.Font = Drawing.Fonts.Monospace
+Text.Size = 18
+Text.Visible = true
 ```
 
 ## Must

@@ -19,12 +19,12 @@ This is a handy way to recognize a game function, since a function's constants r
 ## Example
 
 ```luau
-local function target()
+local function Target()
     return "text", 2.5, tick
 end
 
-for index, value in debug.getconstants(target) do
-    print(index, value)
+for Index, Value in debug.getconstants(Target) do
+    print(Index, Value)
 end
 -- text, 2.5 and tick are all in the list
 ```

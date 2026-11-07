@@ -17,9 +17,9 @@ Returns `true` if [replicatesignal](replicatesignal.md) can send this signal to 
 ## Example
 
 ```luau
-local detector = Instance.new("ClickDetector")
+local Detector = Instance.new("ClickDetector")
 
-print(cansignalreplicate(detector.MouseActionReplicated)) -- true
+print(cansignalreplicate(Detector.MouseActionReplicated)) -- true
 print(cansignalreplicate(Instance.new("Part").Touched)) -- false
 ```
 

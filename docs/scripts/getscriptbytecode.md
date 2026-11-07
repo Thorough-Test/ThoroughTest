@@ -17,9 +17,9 @@ Returns the Luau bytecode the client received for a script. Decompilers read thi
 ## Example
 
 ```luau
-local bytecode = getscriptbytecode(game.Players.LocalPlayer.Character.Animate)
+local Bytecode = getscriptbytecode(game.Players.LocalPlayer.Character.Animate)
 
-print(#bytecode)
+print(#Bytecode)
 ```
 
 ## Must

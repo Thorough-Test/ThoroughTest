@@ -13,11 +13,11 @@ Removes every drawing at once. Use it to clean up after a script without keeping
 ## Example
 
 ```luau
-local circle = Drawing.new("Circle")
+local Circle = Drawing.new("Circle")
 
 cleardrawcache()
 
-print(circle.__OBJECT_EXISTS) -- false
+print(Circle.__OBJECT_EXISTS) -- false
 ```
 
 ## Must

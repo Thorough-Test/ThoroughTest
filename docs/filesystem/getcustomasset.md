@@ -17,10 +17,10 @@ Returns an `rbxasset://` url for a file, so you can use your own images, sounds 
 ## Example
 
 ```luau
-local image = Instance.new("ImageLabel")
-image.Size = UDim2.fromOffset(128, 128)
-image.Image = getcustomasset("logo.png")
-image.Parent = Instance.new("ScreenGui", gethui())
+local Image = Instance.new("ImageLabel")
+Image.Size = UDim2.fromOffset(128, 128)
+Image.Image = getcustomasset("logo.png")
+Image.Parent = Instance.new("ScreenGui", gethui())
 ```
 
 ## Must

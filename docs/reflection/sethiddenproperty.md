@@ -19,11 +19,11 @@ Sets a property's value. It returns `true` if the property was hidden and `false
 ## Example
 
 ```luau
-local fire = Instance.new("Fire")
+local Fire = Instance.new("Fire")
 
-sethiddenproperty(fire, "size_xml", 6)
+sethiddenproperty(Fire, "size_xml", 6)
 
-print(gethiddenproperty(fire, "size_xml")) -- 6 true
+print(gethiddenproperty(Fire, "size_xml")) -- 6 true
 ```
 
 ## Must

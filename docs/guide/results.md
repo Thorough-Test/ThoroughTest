@@ -35,7 +35,7 @@ Sometimes one test needs a second function, like `restorefunction` needing `hook
 ## The score
 
 ```
-score = passed / (passed + failed + missing)
+Score = Passed / (Passed + Failed + Missing)
 ```
 
 The console also prints a second number that leaves missing functions out. That one tells you how well the functions an executor has actually work. A high second number and a low first number means it's correct but incomplete.

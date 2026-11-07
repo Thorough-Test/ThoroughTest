@@ -20,15 +20,15 @@ Sets an object's metatable even if it's locked. It works on userdata and strings
 ## Example
 
 ```luau
-local object = setmetatable({}, { __metatable = "Locked" })
+local Object = setmetatable({}, { __metatable = "Locked" })
 
-setrawmetatable(object, {
-    __index = function(_, key)
-        return `no value for {key}`
+setrawmetatable(Object, {
+    __index = function(_, Key)
+        return `no value for {Key}`
     end,
 })
 
-print(object.coins) -- no value for coins
+print(Object.Coins) -- no value for coins
 ```
 
 ## Must

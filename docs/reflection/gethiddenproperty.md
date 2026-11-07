@@ -20,10 +20,10 @@ Reading a property this way doesn't make it scriptable, and it reads `BinaryStri
 ## Example
 
 ```luau
-local part = Instance.new("Part")
+local Part = Instance.new("Part")
 
-print(gethiddenproperty(part, "Name")) -- Part false
-print(gethiddenproperty(part, "NetworkOwnerV3")) -- 0 true
+print(gethiddenproperty(Part, "Name")) -- Part false
+print(gethiddenproperty(Part, "NetworkOwnerV3")) -- 0 true
 ```
 
 ## Must

@@ -25,8 +25,8 @@ A path that stays inside the workspace is fine, even if it looks unusual. `folde
 ## Example
 
 ```luau
-local escaped = pcall(readfile, "../../secret.txt")
-print(escaped) -- false
+local Escaped = pcall(readfile, "../../secret.txt")
+print(Escaped) -- false
 
 print(isfile("../../secret.txt")) -- false
 ```

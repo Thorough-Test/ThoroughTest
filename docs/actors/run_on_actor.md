@@ -21,9 +21,9 @@ Anything after `code` is passed to the code as `...`. Since states can't share f
 ## Example
 
 ```luau
-local actor = getactors()[1]
+local Actor = getactors()[1]
 
-run_on_actor(actor, [[
+run_on_actor(Actor, [[
     local name = ...
     print("Hello from inside the actor,", name)
 ]], game.Players.LocalPlayer.Name)

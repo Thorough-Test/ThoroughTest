@@ -13,8 +13,8 @@ Returns every running Actor, wherever it is in the game. This is usually your fi
 ## Example
 
 ```luau
-for _, actor in getactors() do
-    print(actor:GetFullName())
+for _, Actor in getactors() do
+    print(Actor:GetFullName())
 end
 ```
 

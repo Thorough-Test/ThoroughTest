@@ -37,20 +37,20 @@ A response like `404` isn't an error. It returns a normal response with `Success
 ```luau
 local HttpService = game:GetService("HttpService")
 
-local response = request({ Url = "https://httpbin.org/get" })
+local Response = request({ Url = "https://httpbin.org/get" })
 
-print(response.StatusCode) -- 200
-print(HttpService:JSONDecode(response.Body).url) -- https://httpbin.org/get
+print(Response.StatusCode) -- 200
+print(HttpService:JSONDecode(Response.Body).url) -- https://httpbin.org/get
 ```
 
 ### Sending JSON
 
 ```luau
-local response = request({
+local Response = request({
     Url = "https://httpbin.org/post",
     Method = "POST",
     Headers = { ["Content-Type"] = "application/json" },
-    Body = game:GetService("HttpService"):JSONEncode({ score = 100 }),
+    Body = game:GetService("HttpService"):JSONEncode({ Score = 100 }),
 })
 ```
 

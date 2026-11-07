@@ -25,18 +25,18 @@ Connects to a `ws://` or `wss://` server and yields until it's ready. If it can'
 ## Example
 
 ```luau
-local socket = WebSocket.connect("wss://ws.postman-echo.com/raw")
+local Socket = WebSocket.connect("wss://ws.postman-echo.com/raw")
 
-socket.OnMessage:Connect(function(message)
-    print("Got:", message) -- Got: hello
-    socket:Close()
+Socket.OnMessage:Connect(function(Message)
+    print("Got:", Message) -- Got: hello
+    Socket:Close()
 end)
 
-socket.OnClose:Connect(function()
+Socket.OnClose:Connect(function()
     print("Closed")
 end)
 
-socket:Send("hello")
+Socket:Send("hello")
 ```
 
 ## Must

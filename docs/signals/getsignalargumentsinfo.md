@@ -17,9 +17,9 @@ Like [getsignalarguments](getsignalarguments.md), with the argument names too.
 ## Example
 
 ```luau
-local argument = getsignalargumentsinfo(game.Players.PlayerAdded)[1]
+local Argument = getsignalargumentsinfo(game.Players.PlayerAdded)[1]
 
-print(argument.Name, argument.Type) -- player Instance
+print(Argument.Name, Argument.Type) -- player Instance
 ```
 
 ## Must

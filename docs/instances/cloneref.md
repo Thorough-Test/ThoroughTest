@@ -19,13 +19,13 @@ Scripts sometimes use this to keep a service reference that weak tables and comp
 ## Example
 
 ```luau
-local part = Instance.new("Part")
-local clone = cloneref(part)
+local Part = Instance.new("Part")
+local Clone = cloneref(Part)
 
-print(clone == part) -- false
+print(Clone == Part) -- false
 
-clone.Name = "Renamed"
-print(part.Name) -- Renamed
+Clone.Name = "Renamed"
+print(Part.Name) -- Renamed
 ```
 
 ## Must

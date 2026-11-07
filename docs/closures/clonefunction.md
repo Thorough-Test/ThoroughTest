@@ -17,18 +17,18 @@ Returns a new function that runs the same code and shares the same upvalues. Hoo
 ## Example
 
 ```luau
-local function getName()
+local function GetName()
     return "real"
 end
 
-local safeGetName = clonefunction(getName)
+local SafeGetName = clonefunction(GetName)
 
-hookfunction(getName, function()
+hookfunction(GetName, function()
     return "hooked"
 end)
 
-print(getName()) -- hooked
-print(safeGetName()) -- real
+print(GetName()) -- hooked
+print(SafeGetName()) -- real
 ```
 
 ## Must

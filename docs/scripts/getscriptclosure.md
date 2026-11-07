@@ -17,10 +17,10 @@ Builds a new Luau function from a script's bytecode. It's a fresh closure of the
 ## Example
 
 ```luau
-local closure = getscriptclosure(game.Players.LocalPlayer.Character.Animate)
+local Closure = getscriptclosure(game.Players.LocalPlayer.Character.Animate)
 
-for _, constant in debug.getconstants(closure) do
-    print(constant)
+for _, Constant in debug.getconstants(Closure) do
+    print(Constant)
 end
 ```
 

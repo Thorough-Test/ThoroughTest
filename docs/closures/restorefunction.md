@@ -17,17 +17,17 @@ Puts a hooked function back the way it was, no matter how many hooks are on it. 
 ## Example
 
 ```luau
-local function greet()
+local function Greet()
     return "hello"
 end
 
-hookfunction(greet, function()
+hookfunction(Greet, function()
     return "hooked"
 end)
-print(greet()) -- hooked
+print(Greet()) -- hooked
 
-restorefunction(greet)
-print(greet()) -- hello
+restorefunction(Greet)
+print(Greet()) -- hello
 ```
 
 ## Must

@@ -97,20 +97,21 @@ An example should show something someone would really do. A list of random calls
 - **Make it runnable.** Paste it into an executor and it should work as written.
 - **Show the output.** There are no videos here, so put what prints in a comment, like `print(1 + 1) -- 2`.
 - **Keep it short.** Under 15 lines is great. If it's longer, it's probably two examples.
-- **Use real names.** `originalIndex` tells you more than `old`, and `old` tells you more than `x`.
+- **Use real names.** `OriginalIndex` tells you more than `Old`, and `Old` tells you more than `X`.
+- **Use PascalCase for names you make up.** `PlayerCoins`, not `playerCoins`. Real API names and fields stay exactly as they are.
 
 Before and after beats a wall of comments:
 
 ```luau
-local function greet()
+local function Greet()
     return "hello"
 end
-print(greet()) -- hello
+print(Greet()) -- hello
 
-hookfunction(greet, function()
+hookfunction(Greet, function()
     return "goodbye"
 end)
-print(greet()) -- goodbye
+print(Greet()) -- goodbye
 ```
 
 ## Changing the standard

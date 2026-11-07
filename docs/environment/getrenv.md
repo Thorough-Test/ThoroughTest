@@ -13,10 +13,10 @@ Returns the globals that game scripts use. Its `_G` and `shared` are the same on
 ## Example
 
 ```luau
-getrenv()._G.playerCoins = 100
+getrenv()._G.PlayerCoins = 100
 
-for key, value in getrenv()._G do
-    print(key, value)
+for Key, Value in getrenv()._G do
+    print(Key, Value)
 end
 ```
 

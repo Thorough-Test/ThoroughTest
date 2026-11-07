@@ -18,11 +18,11 @@ compareinstances(first: Instance, second: Instance) -> boolean
 ## Example
 
 ```luau
-local part = Instance.new("Part")
-local clone = cloneref(part)
+local Part = Instance.new("Part")
+local Clone = cloneref(Part)
 
-print(part == clone) -- false
-print(compareinstances(part, clone)) -- true
+print(Part == Clone) -- false
+print(compareinstances(Part, Clone)) -- true
 ```
 
 ## Must

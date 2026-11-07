@@ -18,12 +18,12 @@ Returns the constant at `index`. Use [debug.getconstants](getconstants.md) when 
 ## Example
 
 ```luau
-local function greet()
+local function Greet()
     return "hello"
 end
 
-for index, value in debug.getconstants(greet) do
-    print(index, debug.getconstant(greet, index)) -- 1 hello
+for Index, Value in debug.getconstants(Greet) do
+    print(Index, debug.getconstant(Greet, Index)) -- 1 hello
 end
 ```
 

@@ -36,16 +36,16 @@ The fake frames are never called. They only exist to be looked at. Frame 1 is th
 ## Example
 
 ```luau
-local function checkCaller()
+local function CheckCaller()
     print(debug.info(2, "n"), debug.info(2, "l"))
 end
 
-local function fromGameCode() end
+local function FromGameCode() end
 
-trampoline_call(checkCaller, {
-    { func = fromGameCode, currentline = 118 },
+trampoline_call(CheckCaller, {
+    { func = FromGameCode, currentline = 118 },
 }, {})
--- fromGameCode 118
+-- FromGameCode 118
 ```
 
 ## Must

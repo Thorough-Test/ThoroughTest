@@ -21,12 +21,12 @@ Makes `part` touch `target` without moving either of them. Use `0` to start a to
 ## Example
 
 ```luau
-local root = game.Players.LocalPlayer.Character.HumanoidRootPart
-local coin = workspace.Coin
+local Root = game.Players.LocalPlayer.Character.HumanoidRootPart
+local Coin = workspace.Coin
 
-firetouchinterest(root, coin, 0)
+firetouchinterest(Root, Coin, 0)
 task.wait()
-firetouchinterest(root, coin, 1)
+firetouchinterest(Root, Coin, 1)
 ```
 
 ## Must

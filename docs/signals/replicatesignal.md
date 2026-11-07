@@ -18,9 +18,9 @@ Sends a signal to the server as if the client's engine had sent it. Only signals
 ## Example
 
 ```luau
-local detector = workspace.Button.ClickDetector
+local Detector = workspace.Button.ClickDetector
 
-replicatesignal(detector.MouseActionReplicated, game.Players.LocalPlayer, 0)
+replicatesignal(Detector.MouseActionReplicated, game.Players.LocalPlayer, 0)
 ```
 
 ## Must

@@ -13,9 +13,9 @@ Returns all the instances Luau has a reference to, whether or not they're in the
 ## Example
 
 ```luau
-for _, instance in getinstances() do
-    if instance:IsA("ModuleScript") then
-        print(instance:GetFullName())
+for _, Item in getinstances() do
+    if Item:IsA("ModuleScript") then
+        print(Item:GetFullName())
     end
 end
 ```

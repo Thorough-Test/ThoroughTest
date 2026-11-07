@@ -20,10 +20,10 @@ Decrypts AES data. The data, key and iv are all base64, the same way [crypt.encr
 ## Example
 
 ```luau
-local key = base64encode(string.rep("k", 32))
+local Key = base64encode(string.rep("k", 32))
 
-local encrypted, iv = crypt.encrypt("secret text", key)
-print(crypt.decrypt(encrypted, key, iv)) -- secret text
+local Encrypted, Iv = crypt.encrypt("secret text", Key)
+print(crypt.decrypt(Encrypted, Key, Iv)) -- secret text
 ```
 
 ## Must

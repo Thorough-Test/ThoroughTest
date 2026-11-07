@@ -8,7 +8,7 @@ summary: Makes a hidden property readable by normal indexing.
 setscriptable(instance: Instance, property: string, state: boolean) -> boolean
 ```
 
-Turns scripting on or off for a property, so you can read it with `part.Property` instead of [gethiddenproperty](gethiddenproperty.md). It returns the state the property had before.
+Turns scripting on or off for a property, so you can read it with `Part.Property` instead of [gethiddenproperty](gethiddenproperty.md). It returns the state the property had before.
 
 > **Note:** Turn it back off when you're done. A game script can check whether a hidden property has become readable.
 
@@ -21,13 +21,13 @@ Turns scripting on or off for a property, so you can read it with `part.Property
 ## Example
 
 ```luau
-local part = Instance.new("Part")
+local Part = Instance.new("Part")
 
-local before = setscriptable(part, "MaterialVariantSerialized", true)
-print(before) -- false
-print(part.MaterialVariantSerialized)
+local Before = setscriptable(Part, "MaterialVariantSerialized", true)
+print(Before) -- false
+print(Part.MaterialVariantSerialized)
 
-setscriptable(part, "MaterialVariantSerialized", false)
+setscriptable(Part, "MaterialVariantSerialized", false)
 ```
 
 ## Must

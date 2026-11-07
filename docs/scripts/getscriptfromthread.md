@@ -17,9 +17,9 @@ Returns the script that owns a thread. It pairs well with [getreg](../environmen
 ## Example
 
 ```luau
-for _, value in getreg() do
-    if type(value) == "thread" then
-        print(getscriptfromthread(value))
+for _, Value in getreg() do
+    if type(Value) == "thread" then
+        print(getscriptfromthread(Value))
     end
 end
 ```

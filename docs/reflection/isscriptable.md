@@ -18,10 +18,10 @@ Returns `true` if scripts can read the property normally, and `false` if indexin
 ## Example
 
 ```luau
-local part = Instance.new("Part")
+local Part = Instance.new("Part")
 
-print(isscriptable(part, "Name")) -- true
-print(isscriptable(part, "MaterialVariantSerialized")) -- false
+print(isscriptable(Part, "Name")) -- true
+print(isscriptable(Part, "MaterialVariantSerialized")) -- false
 ```
 
 ## Must

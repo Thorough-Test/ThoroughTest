@@ -13,12 +13,12 @@ Inside a `__namecall` hook, every method call looks the same. This tells you whi
 ## Example
 
 ```luau
-local originalNamecall
-originalNamecall = hookmetamethod(game, "__namecall", function(self, ...)
+local OriginalNamecall
+OriginalNamecall = hookmetamethod(game, "__namecall", function(self, ...)
     if getnamecallmethod() == "Kick" and self == game.Players.LocalPlayer then
         return
     end
-    return originalNamecall(self, ...)
+    return OriginalNamecall(self, ...)
 end)
 ```
 

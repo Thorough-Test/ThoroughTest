@@ -19,19 +19,19 @@ Pass a thread to read a paused thread's stack instead of your own.
 ## Example
 
 ```luau
-local function inner()
-    for level, frame in debug.getcallstack() do
-        print(level, debug.info(frame.func, "n"), frame.currentline)
+local function Inner()
+    for Level, Frame in debug.getcallstack() do
+        print(Level, debug.info(Frame.func, "n"), Frame.currentline)
     end
 end
 
-local function outer()
-    inner()
+local function Outer()
+    Inner()
 end
 
-outer()
--- 1 inner 3
--- 2 outer 9
+Outer()
+-- 1 Inner 3
+-- 2 Outer 9
 -- 3 ...
 ```
 

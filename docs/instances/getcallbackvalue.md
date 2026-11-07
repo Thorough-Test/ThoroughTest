@@ -18,12 +18,12 @@ Normally you can set a callback like `OnInvoke`, but you can't read it back. Thi
 ## Example
 
 ```luau
-local bindable = Instance.new("BindableFunction")
-bindable.OnInvoke = function()
+local Bindable = Instance.new("BindableFunction")
+Bindable.OnInvoke = function()
     return "hello"
 end
 
-print(getcallbackvalue(bindable, "OnInvoke")()) -- hello
+print(getcallbackvalue(Bindable, "OnInvoke")()) -- hello
 ```
 
 ## Must

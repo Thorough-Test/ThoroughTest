@@ -19,10 +19,10 @@ Returns a running script's environment, with the globals it declared. Writing to
 ## Example
 
 ```luau
-local environment = getsenv(game.Players.LocalPlayer.Character.Animate)
+local Environment = getsenv(game.Players.LocalPlayer.Character.Animate)
 
-print(environment.script) -- Animate
-print(environment.onSwimming) -- function: 0x...
+print(Environment.script) -- Animate
+print(Environment.onSwimming) -- function: 0x...
 ```
 
 ## Must

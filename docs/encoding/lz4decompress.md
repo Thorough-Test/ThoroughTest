@@ -18,10 +18,10 @@ Turns an LZ4 block back into the original data. `size` is the length of the orig
 ## Example
 
 ```luau
-local text = "Hello, world! Hello, world!"
-local compressed = lz4compress(text)
+local Text = "Hello, world! Hello, world!"
+local Compressed = lz4compress(Text)
 
-print(lz4decompress(compressed, #text)) -- Hello, world! Hello, world!
+print(lz4decompress(Compressed, #Text)) -- Hello, world! Hello, world!
 ```
 
 ## Must

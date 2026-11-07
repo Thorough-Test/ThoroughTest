@@ -13,8 +13,8 @@ Returns a place to put your UI where game scripts can't reach it. If an anti-che
 ## Example
 
 ```luau
-local screen = Instance.new("ScreenGui")
-screen.Parent = gethui()
+local Screen = Instance.new("ScreenGui")
+Screen.Parent = gethui()
 ```
 
 ## Must

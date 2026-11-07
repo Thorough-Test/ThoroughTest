@@ -21,16 +21,16 @@ Writes one slot on a function's stack. Use [debug.getstack](getstack.md) to find
 ## Example
 
 ```luau
-local function greet()
-    local player = { name = "me" }
-    local stranger = { name = "someone else" }
+local function Greet()
+    local Player = { Name = "me" }
+    local Stranger = { Name = "someone else" }
 
-    debug.setstack(1, table.find(debug.getstack(1), player), stranger)
+    debug.setstack(1, table.find(debug.getstack(1), Player), Stranger)
 
-    print(player.name) -- someone else
+    print(Player.Name) -- someone else
 end
 
-greet()
+Greet()
 ```
 
 ## Must

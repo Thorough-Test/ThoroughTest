@@ -18,10 +18,10 @@ Does the same thing as `drawing[property]`. It's useful when you have the proper
 ## Example
 
 ```luau
-local circle = Drawing.new("Circle")
-circle.Radius = 50
+local Circle = Drawing.new("Circle")
+Circle.Radius = 50
 
-print(getrenderproperty(circle, "Radius")) -- 50
+print(getrenderproperty(Circle, "Radius")) -- 50
 ```
 
 ## Must

@@ -19,8 +19,8 @@ Works like [loadstring](../closures/loadstring.md), reading the code from a file
 ```luau
 writefile("add.lua", "return 10 + ...")
 
-local add = loadfile("add.lua")
-print(add(1)) -- 11
+local Add = loadfile("add.lua")
+print(Add(1)) -- 11
 ```
 
 ## Must

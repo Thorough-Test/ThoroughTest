@@ -21,18 +21,18 @@ With `activated` set to `true`, it returns a table of the real closures that exi
 ## Example
 
 ```luau
-local function outer()
-    local function inner()
+local function Outer()
+    local function Inner()
         return "inner ran"
     end
-    return inner
+    return Inner
 end
 
-local proto = debug.getproto(outer, 1)
-print(debug.getconstants(proto)[1]) -- inner ran
+local Proto = debug.getproto(Outer, 1)
+print(debug.getconstants(Proto)[1]) -- inner ran
 
-local live = outer()
-print(debug.getproto(outer, 1, true)[1] == live) -- true
+local Live = Outer()
+print(debug.getproto(Outer, 1, true)[1] == Live) -- true
 ```
 
 ## Must

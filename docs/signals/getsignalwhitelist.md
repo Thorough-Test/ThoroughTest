@@ -13,8 +13,8 @@ Returns every signal the engine lets [replicatesignal](replicatesignal.md) use, 
 ## Example
 
 ```luau
-for _, entry in getsignalwhitelist() do
-    print(`{entry.Parent}.{entry.Event}`)
+for _, Entry in getsignalwhitelist() do
+    print(`{Entry.Parent}.{Entry.Event}`)
 end
 ```
 

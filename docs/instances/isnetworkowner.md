@@ -17,9 +17,9 @@ Returns `true` when your client owns the part's physics. Changes you make to a p
 ## Example
 
 ```luau
-local root = game.Players.LocalPlayer.Character.HumanoidRootPart
+local Root = game.Players.LocalPlayer.Character.HumanoidRootPart
 
-print(isnetworkowner(root)) -- true
+print(isnetworkowner(Root)) -- true
 ```
 
 ## Must

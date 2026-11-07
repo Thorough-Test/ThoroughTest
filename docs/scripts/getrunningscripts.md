@@ -13,8 +13,8 @@ Returns the scripts running on your client, including `Script`s with `RunContext
 ## Example
 
 ```luau
-for _, script in getrunningscripts() do
-    print(script:GetFullName())
+for _, Script in getrunningscripts() do
+    print(Script:GetFullName())
 end
 ```
 

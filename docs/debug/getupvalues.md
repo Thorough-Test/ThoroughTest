@@ -17,15 +17,15 @@ Returns every upvalue the function uses, in the same order as [debug.getupvalue]
 ## Example
 
 ```luau
-local coins, inventory = 100, {}
+local Coins, Inventory = 100, {}
 
-local function buy(item)
-    coins -= 1
-    table.insert(inventory, item)
+local function Buy(Item)
+    Coins -= 1
+    table.insert(Inventory, Item)
 end
 
-for index, value in debug.getupvalues(buy) do
-    print(index, value)
+for Index, Value in debug.getupvalues(Buy) do
+    print(Index, Value)
 end
 -- 1 100
 -- 2 table: 0x...

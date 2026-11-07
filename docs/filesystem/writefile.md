@@ -20,7 +20,7 @@ Writes data to a file and replaces whatever was there. The data is available to 
 ```luau
 local HttpService = game:GetService("HttpService")
 
-writefile("settings.json", HttpService:JSONEncode({ volume = 0.5 }))
+writefile("settings.json", HttpService:JSONEncode({ Volume = 0.5 }))
 ```
 
 ## Must

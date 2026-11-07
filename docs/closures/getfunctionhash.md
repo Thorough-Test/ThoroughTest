@@ -19,15 +19,15 @@ The hash covers instructions and constants. C functions don't have either, so th
 ## Example
 
 ```luau
-local function makeCounter()
-    local count = 0
+local function MakeCounter()
+    local Count = 0
     return function()
-        count += 1
-        return count
+        Count += 1
+        return Count
     end
 end
 
-print(getfunctionhash(makeCounter()) == getfunctionhash(makeCounter())) -- true
+print(getfunctionhash(MakeCounter()) == getfunctionhash(MakeCounter())) -- true
 ```
 
 ## Must

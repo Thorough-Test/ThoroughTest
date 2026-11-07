@@ -13,9 +13,9 @@ Returns every script on the client, including disabled scripts and scripts paren
 ## Example
 
 ```luau
-for _, script in getscripts() do
-    if not script.Parent then
-        print("Hidden script:", script.Name)
+for _, Script in getscripts() do
+    if not Script.Parent then
+        print("Hidden script:", Script.Name)
     end
 end
 ```

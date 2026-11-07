@@ -18,13 +18,13 @@ Changes the cache so that looking up `instance` returns `replacement` instead.
 ## Example
 
 ```luau
-local folder = Instance.new("Folder")
-local part = Instance.new("Part", folder)
-local fire = Instance.new("Fire")
+local Folder = Instance.new("Folder")
+local Part = Instance.new("Part", Folder)
+local Fire = Instance.new("Fire")
 
-cache.replace(part, fire)
+cache.replace(Part, Fire)
 
-print(folder:FindFirstChild("Part")) -- Fire
+print(Folder:FindFirstChild("Part")) -- Fire
 ```
 
 ## Must

@@ -39,15 +39,15 @@ Returns details about a function in one table.
 ## Example
 
 ```luau
-local count = 0
-local function add(left, right)
-    count += 1
-    return left + right
+local Count = 0
+local function Add(Left, Right)
+    Count += 1
+    return Left + Right
 end
 
-local info = debug.getinfo(add)
-print(info.name, info.numparams, info.nups, info.what)
--- add 2 1 Lua
+local Info = debug.getinfo(Add)
+print(Info.name, Info.numparams, Info.nups, Info.what)
+-- Add 2 1 Lua
 ```
 
 ## Must

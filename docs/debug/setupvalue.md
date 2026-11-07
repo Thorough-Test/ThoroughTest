@@ -19,17 +19,17 @@ Changes an upvalue, which is the actual variable, not a copy. The new value appl
 ## Example
 
 ```luau
-local coins = 0
+local Coins = 0
 
-local function addCoin()
-    coins += 1
-    return coins
+local function AddCoin()
+    Coins += 1
+    return Coins
 end
 
-debug.setupvalue(addCoin, 1, 500)
+debug.setupvalue(AddCoin, 1, 500)
 
-print(addCoin()) -- 501
-print(coins) -- 501
+print(AddCoin()) -- 501
+print(Coins) -- 501
 ```
 
 ## Must

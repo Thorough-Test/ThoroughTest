@@ -19,9 +19,9 @@ The paths are relative to the workspace, so you can pass them straight to `readf
 ## Example
 
 ```luau
-for _, path in listfiles("saves") do
-    if isfile(path) then
-        print(path, #readfile(path))
+for _, Path in listfiles("saves") do
+    if isfile(Path) then
+        print(Path, #readfile(Path))
     end
 end
 ```

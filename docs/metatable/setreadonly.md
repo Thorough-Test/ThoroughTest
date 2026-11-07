@@ -20,13 +20,13 @@ Sets whether a table can be written to. It's most useful on frozen tables and me
 ## Example
 
 ```luau
-local frozen = table.freeze({ value = 1 })
+local Frozen = table.freeze({ Value = 1 })
 
-setreadonly(frozen, false)
-frozen.value = 2
-setreadonly(frozen, true)
+setreadonly(Frozen, false)
+Frozen.Value = 2
+setreadonly(Frozen, true)
 
-print(frozen.value) -- 2
+print(Frozen.Value) -- 2
 ```
 
 ## Must

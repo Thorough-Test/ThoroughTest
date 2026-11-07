@@ -35,17 +35,17 @@ Returns an object for each connection on a signal.
 ### Blocking anti-idle kicks
 
 ```luau
-for _, connection in getconnections(game.Players.LocalPlayer.Idled) do
-    connection:Disable()
+for _, Connection in getconnections(game.Players.LocalPlayer.Idled) do
+    Connection:Disable()
 end
 ```
 
 ### Reading what's connected
 
 ```luau
-for _, connection in getconnections(workspace.ChildAdded) do
-    if connection.Function then
-        print(debug.info(connection.Function, "sl"))
+for _, Connection in getconnections(workspace.ChildAdded) do
+    if Connection.Function then
+        print(debug.info(Connection.Function, "sl"))
     end
 end
 ```

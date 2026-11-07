@@ -24,18 +24,18 @@ Compilers can move values around, so don't rely on a local being at a fixed inde
 ## Example
 
 ```luau
-local function secret()
-    local password = {}
-    password.value = "swordfish"
+local function Secret()
+    local Password = {}
+    Password.Value = "swordfish"
 
-    for _, value in debug.getstack(1) do
-        if type(value) == "table" then
-            print(value.value) -- swordfish
+    for _, Value in debug.getstack(1) do
+        if type(Value) == "table" then
+            print(Value.Value) -- swordfish
         end
     end
 end
 
-secret()
+Secret()
 ```
 
 ## Must

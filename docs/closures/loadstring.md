@@ -22,12 +22,12 @@ Only source is compiled. Luau doesn't verify bytecode, so crafted bytecode could
 ## Example
 
 ```luau
-local add = loadstring("return ... + 1")
-print(add(1)) -- 2
+local Add = loadstring("return ... + 1")
+print(Add(1)) -- 2
 
-local chunk, problem = loadstring("Example =", "MyChunk")
-print(chunk) -- nil
-print(problem) -- MyChunk:1: Expected identifier when parsing expression, got <eof>
+local Chunk, Problem = loadstring("Example =", "MyChunk")
+print(Chunk) -- nil
+print(Problem) -- MyChunk:1: Expected identifier when parsing expression, got <eof>
 ```
 
 ## Must

@@ -19,10 +19,10 @@ Does the same thing as `drawing[property] = value`. It pairs with [getrenderprop
 ## Example
 
 ```luau
-local circle = Drawing.new("Circle")
+local Circle = Drawing.new("Circle")
 
-for property, value in { Radius = 50, Visible = true } do
-    setrenderproperty(circle, property, value)
+for Property, Value in { Radius = 50, Visible = true } do
+    setrenderproperty(Circle, Property, Value)
 end
 ```
 

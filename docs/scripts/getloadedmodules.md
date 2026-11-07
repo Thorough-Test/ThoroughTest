@@ -13,8 +13,8 @@ Returns every ModuleScript that's been required. A module that was never require
 ## Example
 
 ```luau
-for _, module in getloadedmodules() do
-    print(module:GetFullName())
+for _, Module in getloadedmodules() do
+    print(Module:GetFullName())
 end
 ```
 

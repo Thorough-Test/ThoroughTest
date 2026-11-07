@@ -11,21 +11,21 @@ get_comm_channel(id: any) -> BindableEvent
 
 Normal signals can't cross from one Luau state to another. A comm channel can. `create_comm_channel` returns an id and a channel, and any state can get that same channel by passing the id to `get_comm_channel`.
 
-Pass the id into your Actor code, connect to `channel.Event` on one side, and call `Fire` on the other.
+Pass the id into your Actor code, connect to `Channel.Event` on one side, and call `Fire` on the other.
 
 ## Example
 
 ```luau
-local id, channel = create_comm_channel()
+local Id, Channel = create_comm_channel()
 
-channel.Event:Connect(function(message)
-    print(message) -- hello from the actor
+Channel.Event:Connect(function(Message)
+    print(Message) -- hello from the actor
 end)
 
 run_on_actor(getactors()[1], [[
-    local id = ...
-    get_comm_channel(id):Fire("hello from the actor")
-]], id)
+    local Id = ...
+    get_comm_channel(Id):Fire("hello from the actor")
+]], Id)
 ```
 
 ## Must

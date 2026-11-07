@@ -17,18 +17,18 @@ Returns the protos in the order they're written in the code. Like [debug.getprot
 ## Example
 
 ```luau
-local function outer()
-    local function first()
+local function Outer()
+    local function First()
         return "first"
     end
-    local function second()
+    local function Second()
         return "second"
     end
-    return first, second
+    return First, Second
 end
 
-for index, proto in debug.getprotos(outer) do
-    print(index, debug.getconstants(proto)[1])
+for Index, Proto in debug.getprotos(Outer) do
+    print(Index, debug.getconstants(Proto)[1])
 end
 -- 1 first
 -- 2 second

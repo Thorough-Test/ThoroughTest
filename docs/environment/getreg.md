@@ -13,9 +13,9 @@ Returns the Luau registry, a hidden table where the engine keeps references to t
 ## Example
 
 ```luau
-for _, value in getreg() do
-    if type(value) == "thread" then
-        print(coroutine.status(value))
+for _, Value in getreg() do
+    if type(Value) == "thread" then
+        print(coroutine.status(Value))
     end
 end
 ```

@@ -32,25 +32,25 @@ Call `Destroy` to remove a drawing. `__OBJECT_EXISTS` tells you if it's still al
 ### A centered label
 
 ```luau
-local camera = workspace.CurrentCamera
+local Camera = workspace.CurrentCamera
 
-local label = Drawing.new("Text")
-label.Text = "Hello"
-label.Size = 24
-label.Color = Color3.new(1, 1, 1)
-label.Position = camera.ViewportSize / 2 - label.TextBounds / 2
-label.Visible = true
+local Label = Drawing.new("Text")
+Label.Text = "Hello"
+Label.Size = 24
+Label.Color = Color3.new(1, 1, 1)
+Label.Position = Camera.ViewportSize / 2 - Label.TextBounds / 2
+Label.Visible = true
 ```
 
 ### Showing an image
 
 ```luau
-local image = Drawing.new("Image")
-image.Data = readfile("logo.png")
-image.Size = Vector2.new(128, 128)
-image.Visible = true
+local Image = Drawing.new("Image")
+Image.Data = readfile("logo.png")
+Image.Size = Vector2.new(128, 128)
+Image.Visible = true
 
-repeat task.wait() until image.Loaded
+repeat task.wait() until Image.Loaded
 print("ready")
 ```
 

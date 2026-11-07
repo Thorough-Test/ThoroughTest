@@ -22,26 +22,26 @@ Any mix of function types works. You can hook a C function with a Luau function,
 ### Logging calls
 
 ```luau
-local originalFireServer
-originalFireServer = hookfunction(Instance.new("RemoteEvent").FireServer, function(self, ...)
+local OriginalFireServer
+OriginalFireServer = hookfunction(Instance.new("RemoteEvent").FireServer, function(self, ...)
     print(self.Name, ...)
-    return originalFireServer(self, ...)
+    return OriginalFireServer(self, ...)
 end)
 ```
 
 ### Changing a result
 
 ```luau
-local function getPrice()
+local function GetPrice()
     return 100
 end
 
-local originalGetPrice
-originalGetPrice = hookfunction(getPrice, function()
-    return originalGetPrice() / 2
+local OriginalGetPrice
+OriginalGetPrice = hookfunction(GetPrice, function()
+    return OriginalGetPrice() / 2
 end)
 
-print(getPrice()) -- 50
+print(GetPrice()) -- 50
 ```
 
 ### Stacking hooks
@@ -49,19 +49,19 @@ print(getPrice()) -- 50
 Each hook's returned function is the layer below it, so a second hook calls the first, and the first calls the real function.
 
 ```luau
-local function greet()
+local function Greet()
     return "hello"
 end
 
-local firstOriginal, secondOriginal
-firstOriginal = hookfunction(greet, function()
-    return "1 " .. firstOriginal()
+local FirstOriginal, SecondOriginal
+FirstOriginal = hookfunction(Greet, function()
+    return "1 " .. FirstOriginal()
 end)
-secondOriginal = hookfunction(greet, function()
-    return "2 " .. secondOriginal()
+SecondOriginal = hookfunction(Greet, function()
+    return "2 " .. SecondOriginal()
 end)
 
-print(greet()) -- 2 1 hello
+print(Greet()) -- 2 1 hello
 ```
 
 ## Must

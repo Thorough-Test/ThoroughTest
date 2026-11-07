@@ -20,15 +20,15 @@ The goal is that you can't tell it from a real C function. That covers the trick
 ## Example
 
 ```luau
-local function secret()
+local function Secret()
     return "still works"
 end
 
-local wrapped = newcclosure(secret)
+local Wrapped = newcclosure(Secret)
 
-print(iscclosure(wrapped)) -- true
-print(debug.info(wrapped, "s")) -- [C]
-print(wrapped()) -- still works
+print(iscclosure(Wrapped)) -- true
+print(debug.info(Wrapped, "s")) -- [C]
+print(Wrapped()) -- still works
 ```
 
 ## Must

@@ -17,12 +17,12 @@ Drops the cached reference for an instance. The next lookup creates a new refere
 ## Example
 
 ```luau
-local folder = Instance.new("Folder")
-local part = Instance.new("Part", folder)
+local Folder = Instance.new("Folder")
+local Part = Instance.new("Part", Folder)
 
-cache.invalidate(folder.Part)
+cache.invalidate(Folder.Part)
 
-print(part == folder.Part) -- false
+print(Part == Folder.Part) -- false
 ```
 
 ## Must

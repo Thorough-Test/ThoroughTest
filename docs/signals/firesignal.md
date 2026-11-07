@@ -20,9 +20,9 @@ It doesn't wait for handlers to finish, so a handler that yields won't block the
 ## Example
 
 ```luau
-local button = game.Players.LocalPlayer.PlayerGui.Shop.BuyButton
+local Button = game.Players.LocalPlayer.PlayerGui.Shop.BuyButton
 
-firesignal(button.MouseButton1Click)
+firesignal(Button.MouseButton1Click)
 ```
 
 ## Must

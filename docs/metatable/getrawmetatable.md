@@ -17,9 +17,9 @@ getrawmetatable(object: any) -> table?
 ## Example
 
 ```luau
-local metatable = getrawmetatable(game)
+local Metatable = getrawmetatable(game)
 
-print(metatable.__index(game, "Workspace")) -- Workspace
+print(Metatable.__index(game, "Workspace")) -- Workspace
 ```
 
 ## Must

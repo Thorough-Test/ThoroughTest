@@ -17,13 +17,13 @@ Returns a SHA384 hash of a script's bytecode, as 96 hex characters. Save it and 
 ## Example
 
 ```luau
-local animate = game.Players.LocalPlayer.Character.Animate
-local hash = getscripthash(animate)
+local Animate = game.Players.LocalPlayer.Character.Animate
+local Hash = getscripthash(Animate)
 
-if isfile("animate.hash") and readfile("animate.hash") ~= hash then
+if isfile("animate.hash") and readfile("animate.hash") ~= Hash then
     print("Animate changed")
 end
-writefile("animate.hash", hash)
+writefile("animate.hash", Hash)
 ```
 
 ## Must

@@ -23,19 +23,19 @@ Use [getnamecallmethod](../metatable/getnamecallmethod.md) inside a `__namecall`
 ## Example
 
 ```luau
-local originalNamecall
-originalNamecall = hookmetamethod(game, "__namecall", function(self, ...)
+local OriginalNamecall
+OriginalNamecall = hookmetamethod(game, "__namecall", function(self, ...)
     if getnamecallmethod() == "FireServer" and not checkcaller() then
         print("Remote fired:", self.Name)
     end
-    return originalNamecall(self, ...)
+    return OriginalNamecall(self, ...)
 end)
 ```
 
 To remove the hook later:
 
 ```luau
-hookmetamethod(game, "__namecall", originalNamecall)
+hookmetamethod(game, "__namecall", OriginalNamecall)
 ```
 
 ## Must

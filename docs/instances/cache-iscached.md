@@ -17,11 +17,11 @@ Returns `true` if the instance has a reference in the cache.
 ## Example
 
 ```luau
-local part = Instance.new("Part")
-print(cache.iscached(part)) -- true
+local Part = Instance.new("Part")
+print(cache.iscached(Part)) -- true
 
-cache.invalidate(part)
-print(cache.iscached(part)) -- false
+cache.invalidate(Part)
+print(cache.iscached(Part)) -- false
 ```
 
 ## Must

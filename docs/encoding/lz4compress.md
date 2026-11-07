@@ -17,10 +17,10 @@ Compresses a string with LZ4. Save the original length too, because [lz4decompre
 ## Example
 
 ```luau
-local text = string.rep("hello ", 100)
-local compressed = lz4compress(text)
+local Text = string.rep("hello ", 100)
+local Compressed = lz4compress(Text)
 
-print(#text, #compressed) -- 600 21
+print(#Text, #Compressed) -- 600 21
 ```
 
 ## Must

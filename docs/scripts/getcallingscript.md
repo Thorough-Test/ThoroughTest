@@ -13,12 +13,12 @@ Returns the script that the current thread belongs to. On your own threads it's 
 ## Example
 
 ```luau
-local originalNamecall
-originalNamecall = hookmetamethod(game, "__namecall", function(self, ...)
+local OriginalNamecall
+OriginalNamecall = hookmetamethod(game, "__namecall", function(self, ...)
     if getnamecallmethod() == "FireServer" and not checkcaller() then
         print(getcallingscript(), "fired", self.Name)
     end
-    return originalNamecall(self, ...)
+    return OriginalNamecall(self, ...)
 end)
 ```
 

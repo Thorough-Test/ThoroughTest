@@ -26,8 +26,8 @@ run.exe  <- special character
 ## Example
 
 ```luau
-local blocked = pcall(writefile, "virus.exe", "payload")
-print(blocked) -- false
+local Blocked = pcall(writefile, "virus.exe", "payload")
+print(Blocked) -- false
 
 print(isfile("virus.exe")) -- false
 ```

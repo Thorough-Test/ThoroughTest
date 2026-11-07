@@ -13,8 +13,8 @@ Returns instances that exist but aren't in the game. Scripts often hide things t
 ## Example
 
 ```luau
-for _, instance in getnilinstances() do
-    print(instance.ClassName, instance.Name)
+for _, Item in getnilinstances() do
+    print(Item.ClassName, Item.Name)
 end
 ```
 

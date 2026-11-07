@@ -19,9 +19,9 @@ Fires a ClickDetector as if you clicked it, no matter how far away you are. The 
 ## Example
 
 ```luau
-for _, detector in workspace:GetDescendants() do
-    if detector:IsA("ClickDetector") and detector.Parent.Name == "Button" then
-        fireclickdetector(detector)
+for _, Detector in workspace:GetDescendants() do
+    if Detector:IsA("ClickDetector") and Detector.Parent.Name == "Button" then
+        fireclickdetector(Detector)
     end
 end
 ```
