@@ -14,8 +14,8 @@ The tag next to the executor's name tells you how much to trust the page.
 | --- | --- |
 | **Verified** | The server ran its own checks during the run and every one passed. |
 | **Sub-optimal** | The server checks passed, but something else was running. A few results could be off, so try a fresh server. |
-| **Tampered** | The game or the script was changed during the run. The result isn't complete or correct. |
-| **Spoofed** | The script's report doesn't match the server's own results. Don't trust the score. |
+| **Tampered** | The game or the script was changed during the run. The test still finishes, but the results may not be correct. |
+| **Spoofed** | The results were faked or don't match the server's own results. Don't trust the score. |
 
 ## Test results
 
