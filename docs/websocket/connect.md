@@ -1,0 +1,57 @@
+---
+summary: Connects to a WebSocket server.
+---
+
+# WebSocket.connect
+
+```luau
+WebSocket.connect(url: string) -> WebSocket
+```
+
+Connects to a `ws://` or `wss://` server and yields until it's ready. If it can't connect, it errors.
+
+| Member | What it does |
+| --- | --- |
+| `Send(message)` | Sends a message. |
+| `Close()` | Closes the connection. |
+| `OnMessage` | Fires with the message, and with `true` as a second value if it's binary. |
+| `OnClose` | Fires once when the connection closes. |
+| `IsClosed` | `true` once the connection has closed. |
+
+## Parameters
+
+- `url`: The server's address.
+
+## Example
+
+```luau
+local socket = WebSocket.connect("wss://ws.postman-echo.com/raw")
+
+socket.OnMessage:Connect(function(message)
+    print("Got:", message) -- Got: hello
+    socket:Close()
+end)
+
+socket.OnClose:Connect(function()
+    print("Closed")
+end)
+
+socket:Send("hello")
+```
+
+## Must
+
+- Connect to `wss://` servers.
+- Have `Send`, `Close`, `OnMessage` and `OnClose`.
+- Deliver messages without marking text as binary.
+- Keep messages in order, even when they're sent one right after another.
+- Keep unicode intact.
+- Fire `OnClose` exactly once.
+- Set `IsClosed` to `true` after closing, if it has `IsClosed`.
+- Error on an invalid url, or when nothing is listening.
+
+## Should
+
+- Have `IsClosed`, starting as `false`.
+- Handle a 60KB message.
+- Let a second `Close` do nothing.
