@@ -26,6 +26,6 @@ fireproximityprompt(Prompt)
 
 - Trigger from any distance, passing the local player.
 - Skip `HoldDuration`.
-- Leave `HoldDuration` and `MaxActivationDistance` unchanged.
+- Fire without changing the prompt's properties, even for a moment, or moving the part.
 - Reach the server.
 - Error when given something that isn't a ProximityPrompt.

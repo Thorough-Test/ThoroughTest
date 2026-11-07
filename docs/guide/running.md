@@ -31,6 +31,7 @@ loadstring(game:HttpGet("https://thoroughtest.lol/script"))()
 | `TT only runs in its own place` | You're in another game. The place link is copied for you. |
 | `couldn't reach TT's server` | Wait a few seconds and run it again. A new run can't start right after the last one. |
 | `couldn't upload the results` | The run still counted, and the full output is in your console. Try again later for a link. |
+| `Xeno does not support Luraph` | TT is protected with Luraph, and Xeno can't run Luraph scripts, so TT doesn't run on Xeno. |
 
 ## If your client crashes
 

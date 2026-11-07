@@ -30,4 +30,5 @@ print(Folder:FindFirstChild("Part")) -- Fire
 ## Must
 
 - Make lookups return the replacement.
+- Leave both instances where they are, with no change to `Parent` or `Name`.
 - Error when given something that isn't an instance.

@@ -30,7 +30,7 @@ print(Encrypted, Iv)
 
 ## Must
 
-- Return the encrypted data and the iv as base64 strings.
+- Work with no `iv` or `mode`, and return the encrypted data and the iv as base64 strings.
 - Return an iv of at least 12 bytes, a new one on each call.
 - Match the published AES-256 test vectors for `CBC` and `CTR`.
 - Never return a value for a key that isn't valid.

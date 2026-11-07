@@ -30,5 +30,6 @@ end
 
 - Fire `MouseClick` from any distance, passing the local player.
 - Fire `RightMouseClick`, `MouseHoverEnter` and `MouseHoverLeave` when asked.
+- Fire without changing `MaxActivationDistance` or moving the part.
 - Reach the server.
 - Error when given something that isn't a ClickDetector.
