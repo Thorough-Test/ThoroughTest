@@ -12,6 +12,8 @@ Compiles Luau source into a function. It doesn't run the code, you call the resu
 
 The chunk has the same environment as the code that compiled it, and it runs at the caller's thread identity.
 
+Only source is compiled. Luau doesn't verify bytecode, so crafted bytecode could break out of the sandbox and has to be rejected.
+
 ## Parameters
 
 - `source`: The code to compile.
@@ -38,4 +40,5 @@ print(problem) -- MyChunk:1: Expected identifier when parsing expression, got <e
 - Compile current Luau: type annotations, aliases, generics, if expressions, string interpolation, compound assignment, `continue`, floor division, function attributes and compiler directives.
 - Compile a 2MB script.
 - Run the chunk at the caller's thread identity.
+- Never load compiled bytecode.
 - Error when the source isn't a string.
