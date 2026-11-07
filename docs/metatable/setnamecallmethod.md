@@ -30,7 +30,7 @@ end)
 
 ## Must
 
-- Change what `getnamecallmethod` returns.
+- Change what `getnamecallmethod` returns, even on a thread that hasn't made a namecall yet.
 - Make `game`'s `__namecall` run the method that was set.
 - Let a hook call another method and restore the name.
 - Error when the name isn't a string.
