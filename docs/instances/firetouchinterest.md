@@ -10,13 +10,13 @@ firetouchinterest(part: BasePart, target: BasePart, state: number | boolean) -> 
 
 Makes `part` touch `target` without moving either of them. Use `0` to start a touch and `1` to end it. A full touch needs both calls.
 
-> **Note:** `0` starts and `1` ends, but `true` starts and `false` ends. It's easy to mix those up.
+> **Note:** Executors disagree on booleans. Some treat `true` as start, others read `true` as `1` and end the touch. Use `0` and `1` when it matters.
 
 ## Parameters
 
 - `part`: The part doing the touching.
 - `target`: The part being touched.
-- `state`: `0` or `true` to start, `1` or `false` to end.
+- `state`: `0` to start, `1` to end. `true` and `false` also work, but which one starts depends on the executor.
 
 ## Example
 
@@ -41,4 +41,4 @@ firetouchinterest(Root, Coin, 1)
 
 - Fire each event once per call, for the part that was passed.
 - Keep the touch going until `1`.
-- Treat `true` as start and `false` as end.
+- Accept `true` and `false` as a start and end pair, in either order.
