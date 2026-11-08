@@ -19,8 +19,8 @@ Normal data files have to keep working: `.txt`, `.lua`, `.luau`, `.json`, `.png`
 Windows is forgiving about file names, so checking the last four letters isn't enough. Windows drops a trailing dot or space, so both of these end up as `run.exe` on disk:
 
 ```
-run.exe.
-run.exe  <- special character
+run.exe.   (trailing dot)
+run.exe    (trailing space)
 ```
 
 ## Example
