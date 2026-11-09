@@ -26,7 +26,3 @@ end
 - Be a different table from `getgenv`.
 - Keep executor globals out of it.
 - Keep values written to it.
-
-## Should
-
-- Make values written to it available in the executor's environment.
