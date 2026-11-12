@@ -84,3 +84,4 @@ print(Greet()) -- 2 1 hello
 
 - Return a function of the same closure type as the target.
 - Keep line numbers out of the original's error messages, since the real function has none.
+- Keep a hooked Luau function's line and name in `debug.info`, so it doesn't show the hook's.
