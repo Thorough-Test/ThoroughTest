@@ -35,4 +35,5 @@ print(isfolder("cache")) -- false
 ## Should
 
 - Do nothing for a folder that doesn't exist, instead of erroring.
+- Error when given a file, instead of doing nothing.
 - Error on a path outside the workspace, instead of doing nothing.

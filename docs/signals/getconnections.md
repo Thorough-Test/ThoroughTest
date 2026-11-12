@@ -64,3 +64,4 @@ end
 ## Should
 
 - Keep the function that called `Fire` off the connection's call stack.
+- Error when given an Instance that isn't a signal, instead of returning an empty list.

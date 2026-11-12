@@ -31,3 +31,4 @@ print(isfile("temp.txt")) -- false
 ## Should
 
 - Do nothing for a file that doesn't exist, instead of erroring.
+- Error when given a folder, instead of doing nothing.

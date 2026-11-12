@@ -32,7 +32,7 @@ run_on_actor(getactors()[1], [[
 
 - Return an id and a channel with an `Event`.
 - Send every value through `get_comm_channel` in the same Luau state, nils included.
-- Deliver messages from inside an Actor to the outside.
+- Deliver messages from inside an Actor to the outside, including Roblox values like `Vector3`.
 - Let code inside an Actor connect to the channel and receive messages from the outside.
 
 ## Should
