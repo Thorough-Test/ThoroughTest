@@ -32,6 +32,14 @@ A test can pass and still have **warnings**. A warning means the function works,
 
 Sometimes one test needs a second function, like `restorefunction` needing `hookfunction`. If that second function is missing, the test is skipped or marked missing with a message saying why, so one gap doesn't turn into a pile of confusing fails.
 
+If the second function exists but fails its own test, the test that needs it still fails. TT can't tell which of the two is at fault, and skipping it would raise the score of an executor for being broken. Instead, the results name the likely cause:
+
+```
+readfile and appendfile use writefile, which also failed, so that may be the cause
+```
+
+Fix that function first, then run again.
+
 ## The score
 
 ```

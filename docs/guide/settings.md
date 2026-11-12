@@ -63,13 +63,13 @@ Stops at the first failed test. It's made for fixing things one at a time: fix i
 
 ## crashLog
 
-Before each test, TT writes its name to `ThoroughTest_last_test.txt` in your workspace. It does the same for the steps around the tests, from startup to the results. If the run finishes, the file is deleted. If your client dies or freezes, the file stays, and the next run with `crashLog` on tells you where it stopped:
+Before each test, TT writes its name to `ThoroughTest_last_test.txt` in your workspace. Inside a test, it also writes each case it's about to try. It does the same for the steps around the tests, from startup to the results. If the run finishes, the file is deleted. If your client dies or freezes, the file stays, and the next run with `crashLog` on tells you where it stopped:
 
 ```
-⚠️ the last run stopped during getgc
+⚠️ ThoroughTest thinks your executor crashed while testing getsenv. It seems to have stopped on this check: a script that isn't running
 ```
 
-It's off by default because it writes a file before every test.
+It's off by default because it writes a file before every test and case.
 
 ## copyLink
 

@@ -14,7 +14,7 @@ Returns a running script's environment, with the globals it declared. Writing to
 
 ## Parameters
 
-- `script`: A running script.
+- `script`: A running script, even one parented to `nil`.
 
 ## Example
 
@@ -28,6 +28,7 @@ print(Environment.onSwimming) -- function: 0x...
 ## Must
 
 - Return the script's real environment, with `script` and its globals.
+- Still find a running script after it parents itself to `nil`, the way anti-cheats hide, and pass writes through to it.
 - Pass writes through to the running script.
 - Never return a value for a script that isn't running.
 - Error when given something that isn't a script.

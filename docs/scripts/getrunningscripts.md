@@ -21,6 +21,7 @@ end
 ## Must
 
 - Include running LocalScripts and Scripts with `RunContext` set to `Client`.
+- Include a running script that parented itself to `nil`.
 - Leave out disabled scripts, server scripts and scripts with no bytecode.
 - List each script once.
 - Only list scripts.
