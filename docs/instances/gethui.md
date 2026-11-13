@@ -22,7 +22,7 @@ Screen.Parent = gethui()
 - Return the same container every time, one that can hold UI.
 - Accept UI as children.
 - Not be `PlayerGui` or `CoreGui`.
-- Hide its contents from a game script calling `game:GetDescendants()`.
+- Hide its contents from a game script calling `game:GetDescendants()` or listening to `game.DescendantAdded`.
 
 ## Should
 

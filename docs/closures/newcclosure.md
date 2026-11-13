@@ -33,7 +33,8 @@ print(Wrapped()) -- still works
 
 ## Must
 
-- Return a new function that counts as a C closure and shows `[C]` in `debug.info`.
+- Return a new function that counts as a C closure and shows `[C]` in `debug.info`, for game scripts too.
+- Keep the wrapped Luau function out of a game script's stack.
 - Keep every argument and return value, nils included.
 - Hide the wrapped function's upvalues.
 - Run on the caller's thread.

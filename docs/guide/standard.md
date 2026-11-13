@@ -48,7 +48,7 @@ Being common in other test suites doesn't make something a fail. What matters is
 
 - **It has to work.** A stub that does nothing or errors on every call is a fail. A function that isn't there is reported as missing.
 - **Its results have to be real.** A hardcoded value that only looks right for the test's input is a fail.
-- **It has to look native.** Anything marked `[C]` stays `[C]`, even after it's hooked.
+- **It has to look native.** Anything marked `[C]` stays `[C]`, even after it's hooked. Hooks, `newcclosure`, `gethui` and drawings are also checked from a real game script in TT's place, since that's who they're meant to fool.
 - **It has to work on game code.** A debug function should handle game scripts as well as the executor's own closures.
 - **It can't freeze the game.** A slow request or a big file can yield, but the client keeps running.
 - **Its errors should read cleanly.** Real Roblox functions don't add line numbers to their errors, so a wrapper that adds one gets a warning.

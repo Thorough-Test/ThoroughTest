@@ -77,6 +77,7 @@ print(Greet()) -- 2 1 hello
 - Allow stacked hooks, with each returned function calling exactly one layer down.
 - Keep the error messages of the original and the hooked function, for Roblox methods too.
 - Hook functions inside running game scripts.
+- Look the same to a game script as the unhooked function: the same `debug.info`, the same error, and no Luau code from the hook in the game script's stack.
 - Change what the server receives when `FireServer` is hooked, without the original call also going through.
 
 ## Should
@@ -84,4 +85,5 @@ print(Greet()) -- 2 1 hello
 - Return a function of the same closure type as the target.
 - Keep line numbers out of the original's error messages, since the real function has none.
 - Keep a hooked Luau function's line and name in `debug.info`, so it doesn't show the hook's.
+- Add no extra frames to a game script's stack, even C ones.
 - Error when the hook is missing or either argument isn't a function.

@@ -62,7 +62,7 @@ print("ready")
 - Keep `TextBounds` accurate and read only. It changes with the text, `Size` and line count.
 - Keep `Outline` and `Center` as separate properties.
 - Destroy objects with `Destroy`.
-- Draw on its own layer. Building shapes out of Frames in hidden UI doesn't count.
+- Draw on its own layer. Building shapes out of Frames in hidden UI doesn't count, and a game script listening to `game.DescendantAdded` must not see them.
 - Never return a value for a type or a property that doesn't exist.
 - Leave a property alone when it's set to the wrong type.
 - Have `Loaded` on `Image`, and set it to `true` for a valid PNG.

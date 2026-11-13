@@ -32,7 +32,9 @@ print(Part.Name) -- Renamed
 
 - Return a new reference that works like the instance.
 - Pass reads, writes and method calls through to the real instance.
-- Reflect changes made to the real instance.
+- Reflect changes made to the real instance, including it being destroyed.
+- Fire events on the clone when the real instance changes.
+- Work as an argument to methods, like `IsDescendantOf`.
 - Stay separate from the original in weak tables.
 
 ## Should

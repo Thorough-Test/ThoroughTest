@@ -51,10 +51,12 @@ hookmetamethod(game, "__namecall", OriginalNamecall)
 - Change what the server receives when a `__namecall` hook changes a `FireServer` call, without the original call also going through.
 - Never hook a metamethod that doesn't exist or an object with no metatable.
 - Leave the metamethod working when the hook isn't a function.
+- Give a game script the same error through a hooked `__index`, with no Luau code from the hook in its stack.
 
 ## Should
 
 - Keep the same function after a hook is restored.
 - Make a hooked `__namecall` count as a C function.
+- Add no extra frames to a game script's stack, even C ones.
 - Error, instead of returning nothing, on a metamethod that doesn't exist or an object with no metatable.
 - Error when the hook isn't a function.
