@@ -24,4 +24,7 @@ print(getsignalarguments(game.Players.PlayerAdded)[1]) -- Instance
 
 - Return one type name per argument.
 - Return an empty table for a signal with no arguments.
+
+## Should
+
 - Error without a signal.

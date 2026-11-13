@@ -33,9 +33,10 @@ writefile("animate.hash", Hash)
 - Return different hashes for different scripts.
 - Work on Scripts with `RunContext` set to `Client`.
 - Never return a value for a script with no bytecode.
-- Error when given something that isn't a script.
+- Never return a value for an Instance that isn't a script.
 
 ## Should
 
 - Return the SHA384 of the bytes `getscriptbytecode` returns.
-- Error on a script with no bytecode, instead of returning nothing.
+- Error on a script with no bytecode or an Instance that isn't a script, instead of returning nothing.
+- Error when given something that isn't an Instance.

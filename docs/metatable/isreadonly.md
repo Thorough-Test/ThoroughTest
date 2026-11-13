@@ -26,4 +26,7 @@ print(isreadonly(getrawmetatable(game))) -- true
 
 - Return `false` for normal tables.
 - Return `true` for frozen tables and `game`'s metatable.
+
+## Should
+
 - Error when given something that isn't a table.

@@ -41,7 +41,7 @@ Outer()
 - Return the right `currentline` for Luau frames.
 - Include a `func` in every frame.
 - Never return a line number for a C function.
-- Include a paused function in its thread's call stack.
+- Read a paused thread's stack when one is passed, with the paused function in it.
 
 ## Should
 

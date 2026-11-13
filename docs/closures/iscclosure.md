@@ -27,4 +27,7 @@ print(iscclosure(newcclosure(function() end))) -- true
 - Return `true` for global C functions, Roblox methods and itself.
 - Return `true` for `newcclosure` and `coroutine.wrap` functions.
 - Return `false` for Luau functions.
+
+## Should
+
 - Error when given something that isn't a function.

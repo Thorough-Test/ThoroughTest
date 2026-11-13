@@ -78,10 +78,10 @@ print(Greet()) -- 2 1 hello
 - Keep the error messages of the original and the hooked function, for Roblox methods too.
 - Hook functions inside running game scripts.
 - Change what the server receives when `FireServer` is hooked, without the original call also going through.
-- Error when the hook is missing or either argument isn't a function.
 
 ## Should
 
 - Return a function of the same closure type as the target.
 - Keep line numbers out of the original's error messages, since the real function has none.
 - Keep a hooked Luau function's line and name in `debug.info`, so it doesn't show the hook's.
+- Error when the hook is missing or either argument isn't a function.

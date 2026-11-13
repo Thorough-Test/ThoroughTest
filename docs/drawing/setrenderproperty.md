@@ -30,8 +30,8 @@ end
 
 - Change the property.
 - Never accept a property that doesn't exist.
-- Error when given something that isn't a drawing.
+- Never accept a table that isn't a drawing.
 
 ## Should
 
-- Error on a property that doesn't exist, instead of doing nothing.
+- Error on a property that doesn't exist or a table that isn't a drawing, instead of doing nothing.

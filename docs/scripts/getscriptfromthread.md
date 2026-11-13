@@ -28,4 +28,7 @@ end
 
 - Return the script for a game script's thread.
 - Return `nil` for executor threads and new coroutines.
+
+## Should
+
 - Error when given something that isn't a thread.

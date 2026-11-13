@@ -28,4 +28,7 @@ print(#Text, #Compressed) -- 600 21
 - Return a string that's smaller than repetitive input.
 - Produce real LZ4 blocks that any decoder can read.
 - Handle binary data and empty strings.
+
+## Should
+
 - Error when given `nil`.

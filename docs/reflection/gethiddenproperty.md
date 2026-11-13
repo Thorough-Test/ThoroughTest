@@ -34,9 +34,9 @@ print(gethiddenproperty(Part, "NetworkOwnerV3")) -- 0 true
 - Leave a hidden property hidden after reading it.
 - Read `BinaryString` properties.
 - Never return a value for a property that doesn't exist.
-- Error when given something that isn't an instance.
 
 ## Should
 
 - Error on a property that doesn't exist, instead of returning nothing.
 - Return `NetworkOwnerV3` as a number.
+- Error when given something that isn't an instance.

@@ -28,10 +28,10 @@ setfpscap(0)
 - Keep the frame rate near the cap.
 - Remove the cap with `0`.
 - Never accept a negative cap.
-- Error with no argument, or with a boolean.
 
 ## Should
 
 - Have `getfpscap`, and return the value that was set.
 - Accept numbers written as strings.
 - Error on a negative cap, instead of doing nothing.
+- Error with no argument, or with a boolean.

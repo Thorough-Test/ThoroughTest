@@ -34,4 +34,7 @@ print(Part.Name) -- Renamed
 - Pass reads, writes and method calls through to the real instance.
 - Reflect changes made to the real instance.
 - Stay separate from the original in weak tables.
+
+## Should
+
 - Error when given something that isn't an instance.

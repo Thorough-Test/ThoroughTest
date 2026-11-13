@@ -25,8 +25,8 @@ print(isnetworkowner(Root)) -- true
 ## Must
 
 - Return `true` for your own character.
-- Error when given something that isn't a part.
 
 ## Should
 
 - Return `false` for anchored parts the server owns.
+- Error when given something that isn't a part.

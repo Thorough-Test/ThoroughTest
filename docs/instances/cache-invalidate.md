@@ -29,4 +29,7 @@ print(Part == Folder.Part) -- false
 
 - Make the next lookup return a new reference.
 - Leave the instance in its parent.
+
+## Should
+
 - Error when given something that isn't an instance.

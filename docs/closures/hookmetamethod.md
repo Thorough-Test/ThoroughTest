@@ -43,17 +43,18 @@ hookmetamethod(game, "__namecall", OriginalNamecall)
 - Hook `__index` on tables, whether the metamethod is Luau or C.
 - Hook `__index`, `__namecall` and `__newindex` on `game`.
 - Return the previous metamethod, and keep it working.
+- Hook the function itself, leaving the metatable entry in place.
 - Keep the object's `__metatable` field.
 - Restore the metamethod when the original is passed back as the hook.
 - Allow stacked hooks, with the newest hook running first.
 - Keep the method name when a hook yields before calling the original.
 - Change what the server receives when a `__namecall` hook changes a `FireServer` call, without the original call also going through.
 - Never hook a metamethod that doesn't exist or an object with no metatable.
-- Error when the hook isn't a function.
+- Leave the metamethod working when the hook isn't a function.
 
 ## Should
 
-- Hook the function itself, leaving the metatable entry in place.
 - Keep the same function after a hook is restored.
 - Make a hooked `__namecall` count as a C function.
 - Error, instead of returning nothing, on a metamethod that doesn't exist or an object with no metatable.
+- Error when the hook isn't a function.

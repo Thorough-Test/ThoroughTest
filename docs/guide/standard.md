@@ -28,16 +28,21 @@ Function pages use the same split. **Must** rules are the ones that fail, and **
 
 ## Bad input
 
-What a function does with bad input says a lot about how safe it is to build on. There are two kinds.
+Bad input is anything a function can't use: the wrong type, like a number where a function belongs, the wrong kind, like a Part where a script belongs, or something that doesn't exist, like a missing file.
 
-The **wrong type** is a bug in the calling script, like passing a number where a function belongs. The function should error right away, because staying quiet only hides the bug.
+Erroring is the best answer, because it points straight at the problem. Returning `nil`, `false` or an empty table is fair, since a script that passes good input never sees the difference, so that's a warning. Making up a result or doing something with the bad input is a fail, because the function is lying about what happened.
 
-A **value that doesn't exist** is different. A missing file, an upvalue index past the end or a property that isn't real are all things a script might ask about. Erroring is still the clearest answer, but returning `nil` or an empty table is fair, so that's a warning. Making something up is a fail.
-
-| Input | Errors | Returns nothing | Makes up a result |
+| Bad input | Errors | Returns nothing | Makes up a result or acts on it |
 | --- | --- | --- | --- |
-| Wrong type | Pass | Fail | Fail |
-| Doesn't exist | Pass | Warning | Fail |
+| Any kind | Pass | Warning | Fail |
+
+## Options and features
+
+If a feature has a real use and it not working causes a problem where it's used, it's a fail, even if most scripts never touch it. The `Cookies` option on `request` and reading a paused thread with `debug.getstack` both count, because a script using them gets the wrong result.
+
+Bad input is the exception. Erroring on it only matters to a script that's already broken, so a script using the function correctly never hits a problem.
+
+Being common in other test suites doesn't make something a fail. What matters is whether it causes a problem where it's used.
 
 ## What every function is held to
 

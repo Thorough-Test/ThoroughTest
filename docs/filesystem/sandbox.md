@@ -35,7 +35,6 @@ print(isfile("../../secret.txt")) -- false
 
 - Refuse paths that leave the workspace, or keep them inside it, in `writefile`, `appendfile`, `makefolder`, `readfile`, `listfiles`, `loadfile`, `dofile`, and `getcustomasset`.
 - Return `false` or error from `isfile` and `isfolder` for those paths, never `true`.
-- Error on a nil path in all of them.
 - Keep a path starting with `/` inside the workspace.
 
 ## Should
@@ -43,3 +42,4 @@ print(isfile("../../secret.txt")) -- false
 - Error from `delfile` on those paths, instead of doing nothing.
 - Handle `..` and `./` that stay inside the workspace.
 - Treat `\` and `/` as the same thing.
+- Error on a nil path in all of them.

@@ -36,10 +36,10 @@ print(Object.Coins) -- no value for coins
 - Replace a locked metatable, or clear it with `nil`.
 - Work on userdata and strings.
 - Keep the `__metatable` field of the new metatable.
-- Error when the metatable isn't a table or `nil`.
 
 ## Should
 
 - Return the object.
 - Work on frozen tables.
+- Error when the metatable isn't a table or `nil`.
 - Error when the object is `nil`.

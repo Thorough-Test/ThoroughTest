@@ -36,8 +36,8 @@ print(getfunctionhash(MakeCounter()) == getfunctionhash(MakeCounter())) -- true
 - Return different hashes for functions with different instructions or constants.
 - Return the same hash for identical functions, closures of one function, clones, and the same source compiled twice.
 - Never return a made up hash for a C function.
-- Error when given something that isn't a function.
 
 ## Should
 
 - Error on C functions instead of returning nothing.
+- Error when given something that isn't a function.

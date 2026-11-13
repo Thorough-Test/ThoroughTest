@@ -27,6 +27,9 @@ replicatesignal(Detector.MouseActionReplicated, game.Players.LocalPlayer, 0)
 
 - Reach the server.
 - Work with the right arguments.
-- Error on missing arguments or the wrong types.
-- Error on a signal that can't replicate.
+
+## Should
+
+- Error on a signal that can't replicate, instead of doing nothing.
 - Error when given something that isn't a signal.
+- Error on missing arguments or the wrong types.

@@ -41,4 +41,7 @@ print(Problem) -- MyChunk:1: Expected identifier when parsing expression, got <e
 - Compile a 2MB script.
 - Run the chunk at the caller's thread identity.
 - Never load compiled bytecode.
+
+## Should
+
 - Error when the source isn't a string.

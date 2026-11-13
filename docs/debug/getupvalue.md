@@ -31,8 +31,9 @@ print(debug.getupvalue(AddCoin, 1)) -- 100
 
 - Return the right value, for tables and numbers alike.
 - Work with a stack level.
-- Never return a value for an index past the end, index 0, a function with no upvalues, or a C function.
+- Never return a value for an index past the end, index 0, a function with no upvalues, or a C function like `print` or a `newcclosure` wrapper.
 
 ## Should
 
 - Error in those cases, instead of returning nothing.
+- Error on a `coroutine.wrap` function, instead of returning the thread inside it.

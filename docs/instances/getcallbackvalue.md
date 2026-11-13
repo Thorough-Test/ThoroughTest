@@ -30,4 +30,7 @@ print(getcallbackvalue(Bindable, "OnInvoke")()) -- hello
 
 - Return a working callback, for your own and for game scripts' callbacks.
 - Return `nil` for an unset or cleared callback.
+
+## Should
+
 - Error when given something that isn't an instance.

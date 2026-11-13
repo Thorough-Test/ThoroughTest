@@ -28,4 +28,8 @@ fireproximityprompt(Prompt)
 - Skip `HoldDuration`.
 - Fire without changing the prompt's properties, even for a moment, or moving the part.
 - Reach the server.
-- Error when given something that isn't a ProximityPrompt.
+
+## Should
+
+- Error on an Instance that isn't a ProximityPrompt, instead of doing nothing.
+- Error when given something that isn't an Instance.

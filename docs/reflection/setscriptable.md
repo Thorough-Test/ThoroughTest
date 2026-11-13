@@ -35,8 +35,8 @@ setscriptable(Part, "MaterialVariantSerialized", false)
 - Return the previous state.
 - Make the property readable, and hidden again when turned off.
 - Return `true` for a property that was already scriptable.
-- Error when given something that isn't an instance.
 
 ## Should
 
 - Error on a property that doesn't exist.
+- Error when given something that isn't an instance.

@@ -24,12 +24,11 @@ print(dofile("add.lua")) -- 2
 
 ## Must
 
-- Run the whole file before returning.
+- Run the whole file before returning, and return its values.
 - Error on a file with a syntax error.
 - Let errors inside the file reach the caller unchanged.
 - Never return a value for a file that doesn't exist.
 
 ## Should
 
-- Return the file's values.
 - Error on a file that doesn't exist, instead of returning nothing.

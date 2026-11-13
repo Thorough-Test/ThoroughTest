@@ -58,18 +58,18 @@ local Response = request({
 
 - Return every response field with the right type.
 - Support `GET`, `POST`, `PUT`, `PATCH`, `DELETE`, `HEAD` and `OPTIONS`, with `GET` as the default.
-- Send custom headers and a `User-Agent`.
+- Send custom headers, cookies from the `Cookies` option and a `User-Agent`.
 - Return error statuses as responses, with `Success` set to `false`.
 - Return response headers.
 - Keep the game running while it waits.
 - Keep binary data intact in both directions.
 - Follow redirects, and decompress gzip when it asked for gzip.
-- Error with no arguments, and never report success for an invalid url.
+- Never report success for an invalid url.
 
 ## Should
 
 - Decompress gzip when it didn't ask for gzip.
 - Send `Roblox-Game-Id` as the current `game.JobId`.
 - Include the executor name in the `User-Agent`.
-- Support the `Cookies` option.
 - Have `http_request` and `http.request` as aliases.
+- Error with no arguments.

@@ -25,4 +25,7 @@ print(base64decode("SGVsbG8gV29ybGQh")) -- Hello World!
 - Decode standard base64 correctly, padding included.
 - Return all 256 byte values unchanged.
 - Handle 300KB of data.
+
+## Should
+
 - Error when given `nil`.

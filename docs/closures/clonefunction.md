@@ -40,4 +40,7 @@ print(SafeGetName()) -- real
 - Return a new C closure for a C function.
 - Work on Roblox methods and on other clones.
 - Keep the clone separate: `setfenv` on the clone doesn't change the original, and hooking the original doesn't change the clone.
+
+## Should
+
 - Error when given something that isn't a function.

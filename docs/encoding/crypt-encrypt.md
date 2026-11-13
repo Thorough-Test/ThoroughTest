@@ -34,8 +34,8 @@ print(Encrypted, Iv)
 - Return an iv of at least 12 bytes, a new one on each call.
 - Match the published AES-256 test vectors for `CBC` and `CTR`.
 - Never return a value for a key that isn't valid.
-- Error when given `nil`.
 
 ## Should
 
 - Error on a key that isn't valid, instead of returning nothing.
+- Error when given `nil`.

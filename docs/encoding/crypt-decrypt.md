@@ -28,14 +28,13 @@ print(crypt.decrypt(Encrypted, Key, Iv, "CBC")) -- secret text
 
 ## Must
 
-- Return the original bytes in `CBC` and `CTR`.
+- Return the original bytes in `CBC`, `CTR`, `CFB`, `OFB`, `ECB` and `GCM`.
 - Match the published AES-256 test vector.
 - Never return the original text with the wrong key.
 - Never return a value for a key that isn't valid.
-- Error when given `nil`.
 
 ## Should
 
 - Default to `CBC` when `mode` is left out.
-- Support `CFB`, `OFB`, `ECB` and `GCM`.
 - Error on a key that isn't valid, instead of returning nothing.
+- Error when given `nil`.

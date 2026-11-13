@@ -47,11 +47,11 @@ Socket:Send("hello")
 - Keep messages in order, even when they're sent one right after another.
 - Keep unicode intact.
 - Fire `OnClose` exactly once.
-- Set `IsClosed` to `true` after closing, if it has `IsClosed`.
-- Error on an invalid url, or when nothing is listening.
+- Have `IsClosed`, starting as `false` and set to `true` after closing.
+- Handle a 60KB message.
+- Never return a socket for an invalid url, or when nothing is listening.
 
 ## Should
 
-- Have `IsClosed`, starting as `false`.
-- Handle a 60KB message.
+- Error on an invalid url, or when nothing is listening, instead of returning nothing.
 - Let a second `Close` do nothing.

@@ -59,9 +59,9 @@ end
 - Make `Disable` and `Enable` work, including on game scripts, and on a `:Wait` connection without resuming its thread.
 - Make `Disconnect` disconnect the real connection.
 - Let `hookfunction` on `Function` change what runs.
-- Error when given something that isn't a signal.
 
 ## Should
 
 - Keep the function that called `Fire` off the connection's call stack.
 - Error when given an Instance that isn't a signal, instead of returning an empty list.
+- Error when given something that isn't a signal.

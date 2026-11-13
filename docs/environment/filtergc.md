@@ -63,8 +63,9 @@ local Config = filtergc("table", {
 - Leave out the executor's functions unless `IgnoreExecutor` is `false`.
 - Return an empty table or `nil` when nothing matches.
 - Require all of `Keys`, and require the exact values in `KeyValuePairs`.
-- Error on an unknown kind, or when the filters aren't a table.
+- Never return matches for an unknown kind.
 
 ## Should
 
-- Filter by `UpvalueCount`, leaving out functions with a different count.
+- Error on an unknown kind, instead of returning nothing.
+- Error when the filters aren't a table.

@@ -1,5 +1,5 @@
 ---
-summary: Hashes data with MD5, SHA1 or SHA2.
+summary: Hashes data with MD5, SHA1, SHA2 or SHA3.
 ---
 
 # crypt.hash
@@ -8,7 +8,7 @@ summary: Hashes data with MD5, SHA1 or SHA2.
 crypt.hash(data: string, algorithm: string) -> string
 ```
 
-Returns the hash of `data` as lowercase or uppercase hex. Supported algorithms are `md5`, `sha1`, `sha256`, `sha384` and `sha512`.
+Returns the hash of `data` as lowercase or uppercase hex. Supported algorithms are `md5`, `sha1`, `sha256`, `sha384`, `sha512` and `sha3-256`.
 
 ## Parameters
 
@@ -24,12 +24,11 @@ print(crypt.hash("abc", "sha256"))
 
 ## Must
 
-- Match the published digests for all five algorithms.
+- Match the published digests for all six algorithms, `sha3-256` included.
 - Hash empty strings and binary data correctly.
 - Never return a value for an algorithm that doesn't exist.
-- Error when the data is `nil`.
 
 ## Should
 
-- Support `sha3-256`.
 - Error on an algorithm that doesn't exist, instead of returning nothing.
+- Error when the data is `nil`.

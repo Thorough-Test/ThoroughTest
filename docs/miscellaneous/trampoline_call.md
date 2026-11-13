@@ -52,15 +52,16 @@ trampoline_call(CheckCaller, {
 
 - Return `true` and every result, nils included, or `false` and the error, unchanged.
 - Call C functions too.
+- Let the function yield.
 - Show the frames in order, closest caller first, with the right function and line.
 - Never call a fake frame's function.
 - Accept a stack from `debug.getcallstack`.
 - Honor `thread` without running or resuming it, and inherit its identity.
 - Honor `script`, `identity` and `env`.
 - Leave the caller's identity alone.
-- Error when an argument is missing, a frame has no `func` or `currentline`, or `script` isn't a script.
 
 ## Should
 
-- Let the function yield.
 - Give `thread` priority over `identity` and `script`.
+- Error when a frame has no `func` or `currentline`, or `script` isn't a script.
+- Error when an argument is missing.

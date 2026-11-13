@@ -28,11 +28,12 @@ end
 
 - Return a Luau closure with the script's constants in it.
 - Work on LocalScripts and ModuleScripts.
+- Set `script` in the closure's environment to the script it came from.
 - Never return a value for a script with no bytecode.
-- Error when given something that isn't a script.
+- Never return a value for an Instance that isn't a script.
 
 ## Should
 
 - Return a new closure on each call.
-- Set `script` in the closure's environment to the script it came from.
-- Error on a script with no bytecode, instead of returning nothing.
+- Error on a script with no bytecode or an Instance that isn't a script, instead of returning nothing.
+- Error when given something that isn't an Instance.

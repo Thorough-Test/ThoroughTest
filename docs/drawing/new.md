@@ -14,7 +14,7 @@ Creates a drawing of the given type. Every type has the shared properties, plus 
 | --- | --- |
 | Every type | `Visible`, `ZIndex`, `Transparency`, `Color` |
 | `Line` | `From`, `To`, `Thickness` |
-| `Text` | `Text`, `TextBounds` (read only), `Size`, `Position`, `Center`, `Outline`, `OutlineColor`, `Font` |
+| `Text` | `Text`, `TextBounds` (read only), `Size`, `Position`, `Center`, `Outline`, `OutlineColor`, `OutlineOpacity`, `Font` |
 | `Image` | `Data`, `Size`, `Position`, `Rounding`, `Loaded` (read only) |
 | `Circle` | `NumSides`, `Radius`, `Position`, `Thickness`, `Filled` |
 | `Square` | `Size`, `Position`, `Thickness`, `Filled` |
@@ -64,6 +64,9 @@ print("ready")
 - Destroy objects with `Destroy`.
 - Draw on its own layer. Building shapes out of Frames in hidden UI doesn't count.
 - Never return a value for a type or a property that doesn't exist.
+- Leave a property alone when it's set to the wrong type.
+- Have `Loaded` on `Image`, and set it to `true` for a valid PNG.
+- Have an `OutlineOpacity` on `Text`.
 
 ## Should
 
@@ -71,7 +74,5 @@ print("ready")
 - Create and destroy 1000 drawings in under 3 seconds.
 - Return `Font` as the id it was set to.
 - Accept `Centered` and `Outlined` as aliases.
-- Have an `OutlineOpacity` on `Text`.
-- Have `Loaded` on `Image`, and set it to `true` for a valid PNG.
-- Error when a property is set to the wrong type.
 - Error on a type or a property that doesn't exist, instead of returning nothing.
+- Error when a property is set to the wrong type.

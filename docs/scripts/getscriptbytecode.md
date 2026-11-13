@@ -27,8 +27,9 @@ print(#Bytecode)
 - Return the script's real bytecode, with its strings in it.
 - Return the same bytes every time.
 - Never return a value for a script with no bytecode.
-- Error when given something that isn't a script.
+- Never return a value for an Instance that isn't a script.
 
 ## Should
 
-- Error on a script with no bytecode, instead of returning nothing or an empty string.
+- Error on a script with no bytecode or an Instance that isn't a script, instead of returning nothing or an empty string.
+- Error when given something that isn't an Instance.

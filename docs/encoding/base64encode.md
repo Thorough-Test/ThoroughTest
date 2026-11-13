@@ -26,4 +26,7 @@ print(base64encode("Hello World!")) -- SGVsbG8gV29ybGQh
 - Match the standard output for all 256 byte values.
 - Encode an empty string as an empty string.
 - Never add line breaks to long output.
+
+## Should
+
 - Error when given `nil`.

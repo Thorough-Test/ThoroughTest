@@ -42,10 +42,10 @@ print(Wrapped()) -- still works
 - Stop when `task.cancel` cancels a thread yielding inside it.
 - Work as a metamethod and as a signal handler.
 - Work when wrapped again, and inside 150 nested `coroutine.wrap` calls.
-- Error when given something that isn't a function.
 
 ## Should
 
 - Keep line numbers out of error messages, since real C functions don't have them.
 - Wrap C functions too.
 - Show the debug name in `debug.info`.
+- Error when given something that isn't a function.

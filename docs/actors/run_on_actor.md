@@ -36,8 +36,9 @@ run_on_actor(Actor, [[
 - Give the code access to the executor API, including `getgc`, `getgenv`, `getrawmetatable`, `getrenv`, `hookfunction`, `hookmetamethod`, `loadstring`, `newcclosure` and `restorefunction`.
 - Make hooking and restoring work inside the Actor.
 - Keep working after earlier code errored or failed to compile.
-- Error when given anything other than an Actor.
 
 ## Should
 
 - Pass extra arguments to the code.
+- Error on an Instance that isn't an Actor, instead of doing nothing.
+- Error when given something that isn't an Instance.

@@ -37,8 +37,8 @@ print(Greet()) -- hello
 - Keep the function's upvalues.
 - Only affect the function it was given.
 - Allow hooking and restoring the same function again.
-- Error when given something that isn't a function.
 
 ## Should
 
 - Error on a function that was never hooked.
+- Error when given something that isn't a function.

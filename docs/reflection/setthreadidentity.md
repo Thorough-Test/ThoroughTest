@@ -33,4 +33,7 @@ print(game:GetService("CoreGui").Name) -- CoreGui
 - Pass the identity on to new threads.
 - Keep the identity through a yield.
 - Allow setting a higher identity again.
+
+## Should
+
 - Error when the identity isn't a number.

@@ -28,4 +28,7 @@ print(Metatable.__index(game, "Workspace")) -- Workspace
 - Return a working metatable for `game`.
 - Return the metatable of proxies, strings and Vector3s.
 - Return `nil` for values with no metatable, like plain tables and numbers.
+
+## Should
+
 - Error with no arguments.

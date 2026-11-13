@@ -34,4 +34,7 @@ print(Frozen.Value) -- 2
 - Unlock frozen tables so they can be written to.
 - Lock tables so a write errors.
 - Unlock and lock `game`'s metatable.
+
+## Should
+
 - Error when given something that isn't a table.

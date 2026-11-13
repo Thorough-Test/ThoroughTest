@@ -32,8 +32,9 @@ print(readfile("log.txt"))
 - Change nothing when the data is an empty string.
 - Create the file if it's missing.
 - Keep binary data intact.
-- Error when the path is a folder, and leave the folder alone.
+- Leave a folder alone when given its path.
 
 ## Should
 
 - Create missing parent folders, like `writefile`.
+- Error when the path is a folder.

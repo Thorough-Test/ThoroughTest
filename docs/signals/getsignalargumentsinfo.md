@@ -27,4 +27,7 @@ print(Argument.Name, Argument.Type) -- player Instance
 - Return the right `Name` and `Type` for each argument.
 - Return an empty table for a signal with no arguments.
 - Match `getsignalarguments`.
+
+## Should
+
 - Error without a signal.

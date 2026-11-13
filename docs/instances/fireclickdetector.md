@@ -32,4 +32,8 @@ end
 - Fire `RightMouseClick`, `MouseHoverEnter` and `MouseHoverLeave` when asked.
 - Fire without changing `MaxActivationDistance` or moving the part.
 - Reach the server.
-- Error when given something that isn't a ClickDetector.
+
+## Should
+
+- Error on an Instance that isn't a ClickDetector, instead of doing nothing.
+- Error when given something that isn't an Instance.

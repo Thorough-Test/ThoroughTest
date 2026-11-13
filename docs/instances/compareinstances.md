@@ -29,4 +29,7 @@ print(compareinstances(Part, Clone)) -- true
 
 - Return `true` for the same instance and for a cloneref of it.
 - Return `false` for different instances.
+
+## Should
+
 - Error unless given two instances.

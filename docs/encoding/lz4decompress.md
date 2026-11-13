@@ -29,9 +29,9 @@ print(lz4decompress(Compressed, #Text)) -- Hello, world! Hello, world!
 - Return text, binary data and runs of null bytes exactly.
 - Read blocks made by other LZ4 tools, with literals and matches.
 - Handle 1MB of data.
-- Error when given `nil`.
 
 ## Should
 
 - Ignore a `size` larger than the decompressed data.
 - Not return data for a `size` smaller than the decompressed data.
+- Error when given `nil`.

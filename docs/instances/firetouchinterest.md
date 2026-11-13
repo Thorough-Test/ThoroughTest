@@ -35,10 +35,10 @@ firetouchinterest(Root, Coin, 1)
 - Fire `TouchEnded` with `1`.
 - Reach the server for both.
 - Fire the touch without moving either part, even for a moment.
-- Error when either part is missing or isn't a part.
 
 ## Should
 
 - Fire each event once per call, for the part that was passed.
 - Keep the touch going until `1`.
 - Accept `true` and `false` as a start and end pair, in either order.
+- Error when either part is missing or isn't a part.

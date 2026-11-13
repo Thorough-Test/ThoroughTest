@@ -31,9 +31,10 @@ writefile("settings.json", HttpService:JSONEncode({ Volume = 0.5 }))
 - Make every write readable right away, 200 times in a row.
 - Create all 200 files when they're written in a row.
 - Never report success for a file that wasn't created.
-- Error when the path is a folder, and leave the folder alone.
-- Error when the data is `nil`.
+- Leave a folder alone when given its path.
 
 ## Should
 
 - Create missing parent folders.
+- Error when the data is `nil`.
+- Error when the path is a folder.

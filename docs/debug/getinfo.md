@@ -58,8 +58,8 @@ print(Info.name, Info.numparams, Info.nups, Info.what)
 - Include the chunk name in `source` and `short_src`.
 - Work with stack levels, with level 1 as the caller and the right `currentline`.
 - Never return a value for a stack level that doesn't exist.
-- Error when given something that isn't a function or a number.
 
 ## Should
 
 - Error on a stack level that doesn't exist, instead of returning nothing.
+- Error when given something that isn't a function or a number.

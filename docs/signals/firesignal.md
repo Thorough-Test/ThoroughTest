@@ -32,8 +32,8 @@ firesignal(Button.MouseButton1Click)
 - Work on `GetPropertyChangedSignal` signals.
 - Return without waiting for a handler that yields, and let it finish.
 - Do nothing on a signal with no connections, without erroring.
-- Error when given something that isn't a signal.
 
 ## Should
 
 - Start handlers right away. Waiting for deferred signals is fine, so this is only a warning.
+- Error when given something that isn't a signal.

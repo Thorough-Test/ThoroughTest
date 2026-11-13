@@ -31,9 +31,10 @@ print(Environment.onSwimming) -- function: 0x...
 - Still find a running script after it parents itself to `nil`, the way anti-cheats hide, and pass writes through to it.
 - Pass writes through to the running script.
 - Never return a value for a script that isn't running.
-- Error when given something that isn't a script.
+- Never return a value for an Instance that isn't a script.
 
 ## Should
 
 - Return the same table for the same script.
-- Error on a script that isn't running, instead of returning nothing.
+- Error on a script that isn't running or an Instance that isn't a script, instead of returning nothing.
+- Error when given something that isn't an Instance.
