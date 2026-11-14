@@ -40,7 +40,7 @@ hookmetamethod(game, "__namecall", OriginalNamecall)
 
 ### What a game script sees
 
-A game can read a member that doesn't exist and compare the error before and after a hook. A hook that only calls the original has to give exactly the same error. Don't add or remove a script and line at the start of it.
+A game can read a member that doesn't exist and compare the error before and after a hook. It can do the same with `__namecall` and `__newindex`, and an error handler can check which function raised the error. A hook that only calls the original has to give exactly the same error. Don't add or remove a script and line at the start of it.
 
 ```luau
 local function Read()
@@ -71,7 +71,7 @@ Both lines have to print the same error.
 - Change what the server receives when a `__namecall` hook changes a `FireServer` call, without the original call also going through.
 - Never hook a metamethod that doesn't exist or an object with no metatable.
 - Leave the metamethod working when the hook isn't a function.
-- Give a game script the same error through a hooked `__index`, with no Luau code from the hook in its stack.
+- Give a game script the same error through a hooked `__index`, `__namecall` or `__newindex`, raised by the same function, with no Luau code from the hook in its stack.
 
 ## Should
 
