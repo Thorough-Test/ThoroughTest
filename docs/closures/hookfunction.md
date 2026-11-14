@@ -66,41 +66,48 @@ print(Greet()) -- 2 1 hello
 
 ### What a game script sees
 
-A common way for a game to find hooks is to call a function with a bad argument and compare the error, the `debug.info` result and the stack with what the unhooked function gives. If anything changes once the hook is in, the game knows.
+A game can look for hooks by calling a function with a bad argument and comparing the error, the `debug.info` result and the call stack with what the unhooked function gives. Once the hook is in, all three have to stay the same.
 
-TT checks this from a LocalScript in its own place. It hooks a `clonefunction` copy of `utf8.nfcnormalize`, so the real function stays untouched, and the LocalScript calls that copy with `nil` before and after the hook. Both calls have to give the same error text, even when the hooked one looks like the "right" message. For example, if the unhooked copy errors with `invalid argument #1 (string expected, got nil)` because it lost its name, and the hooked copy with `invalid argument #1 to 'nfcnormalize' (string expected, got nil)`, a game can tell them apart.
+The error is the easy one to miss. When a C function errors, Luau starts the message with the script and line that called it:
 
-This prints the two errors from the executor. It only catches mismatches that also happen there, so a difference that only shows up when a game script makes the call needs the LocalScript version below:
+```
+Players.Player1.PlayerScripts.Check:4: invalid argument #1 to 'nfcnormalize' (string expected, got nil)
+```
+
+A hooked function has to keep that start, pointing at the same game script line. Dropping it, or pointing it at the hook, makes the hook visible.
+
+The executor shows this too, as long as a Luau function makes the call. `pcall(Target, nil)` has no calling line, so it can't show a difference:
 
 ```luau
 local Target = clonefunction(utf8.nfcnormalize)
-local BeforeError = select(2, pcall(Target, nil))
+local function Call()
+    return Target(nil)
+end
+print(pcall(Call))
 
 local Original
 Original = hookfunction(Target, function(...)
     return Original(...)
 end)
-local HookedError = select(2, pcall(Target, nil))
+print(pcall(Call))
 restorefunction(Target)
-
-print(BeforeError)
-print(HookedError)
-print(BeforeError == HookedError) -- true
 ```
 
-To see it the way a game script does, put this LocalScript in a place you own:
+Both lines have to print the same error, line number included. If your executor's chunks have no line info, test from a game script instead. Put this LocalScript in a place you own:
 
 ```luau
 local Inspector = Instance.new("BindableFunction")
 Inspector.Name = "Inspector"
 Inspector.OnInvoke = function(Target)
-    local _, Problem = pcall(Target, nil)
+    local _, Problem = pcall(function()
+        return Target(nil)
+    end)
     return tostring(Problem), debug.info(Target, "sn")
 end
 Inspector.Parent = game:GetService("ReplicatedStorage")
 ```
 
-Then run this from the executor. Both lines have to print the same thing:
+Then run this from the executor:
 
 ```luau
 local Inspector = game:GetService("ReplicatedStorage"):WaitForChild("Inspector")
@@ -115,7 +122,7 @@ print(Inspector:Invoke(Target))
 restorefunction(Target)
 ```
 
-TT runs this with a Luau hook and again with a `newcclosure` hook.
+Both lines have to match. Hooks made with `newcclosure` have to pass this too.
 
 ## Must
 
@@ -130,13 +137,13 @@ TT runs this with a Luau hook and again with a `newcclosure` hook.
 - Allow stacked hooks, with each returned function calling exactly one layer down.
 - Keep the error messages of the original and the hooked function, for Roblox methods too.
 - Hook functions inside running game scripts.
-- Look the same to a game script as the unhooked function: the same `debug.info`, the same error, and no Luau code from the hook in the game script's stack.
+- Look the same to a game script as the unhooked function: the same `debug.info`, the same error including the calling line at its start, and no Luau code from the hook in the game script's stack.
 - Change what the server receives when `FireServer` is hooked, without the original call also going through.
 
 ## Should
 
 - Return a function of the same closure type as the target.
-- Keep line numbers out of the original's error messages, since the real function has none.
+- Return an original that doesn't add its own line number to error messages.
 - Keep a hooked Luau function's line and name in `debug.info`, so it doesn't show the hook's.
 - Add no extra frames to a game script's stack, even C ones.
 - Error when the hook is missing or either argument isn't a function.

@@ -8,7 +8,7 @@ summary: Removes every hook from a function.
 restorefunction(target: function) -> ()
 ```
 
-Puts a hooked function back the way it was, no matter how many hooks are on it. Nothing else changes. Its upvalues keep their values, other hooked functions stay hooked, and you can hook it again afterward.
+Puts a hooked function back the way it was, no matter how many hooks are on it. Nothing else changes. Its upvalues keep their values, other hooked functions stay hooked, and you can hook it again afterward. A restored game script function is still the game's, so [isexecutorclosure](isexecutorclosure.md) returns `false` for it.
 
 ## Parameters
 
@@ -37,6 +37,7 @@ print(Greet()) -- hello
 - Keep the function's upvalues.
 - Only affect the function it was given.
 - Allow hooking and restoring the same function again.
+- Leave nothing behind. A restored game script function still returns `false` from `isexecutorclosure`.
 
 ## Should
 

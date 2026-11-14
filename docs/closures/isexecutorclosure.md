@@ -19,7 +19,21 @@ Returns `true` for functions made by the executor or by your scripts, and `false
 ```luau
 print(isexecutorclosure(getgenv)) -- true
 print(isexecutorclosure(function() end)) -- true
+print(isexecutorclosure(newcclosure(function() end))) -- true
+print(isexecutorclosure(loadstring("return 1"))) -- true
+
 print(isexecutorclosure(print)) -- false
+print(isexecutorclosure(game.IsA)) -- false
+```
+
+### Game script functions
+
+A function defined inside a game script is the game's, even when you reach it from the executor. It has to stay `false` after you've hooked and restored it.
+
+```luau
+local Animate = game:GetService("Players").LocalPlayer.Character.Animate
+local OnClimbing = getsenv(Animate).onClimbing
+print(isexecutorclosure(OnClimbing)) -- false
 ```
 
 ## Must
