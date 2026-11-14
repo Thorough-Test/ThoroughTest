@@ -68,9 +68,9 @@ print(Greet()) -- 2 1 hello
 
 A common way for a game to find hooks is to call a function with a bad argument and compare the error, the `debug.info` result and the stack with what the unhooked function gives. If anything changes once the hook is in, the game knows.
 
-TT checks this from a LocalScript in its own place. It hooks a `clonefunction` copy of `utf8.nfcnormalize`, so the real function stays untouched, and the LocalScript calls that copy with `nil` before and after the hook. Both calls have to give the same error text, even when the hooked one looks like the "right" message. For example, if the unhooked copy errors with `'?'` as the function name and the hooked copy with `'nfcnormalize'`, a game can tell them apart.
+TT checks this from a LocalScript in its own place. It hooks a `clonefunction` copy of `utf8.nfcnormalize`, so the real function stays untouched, and the LocalScript calls that copy with `nil` before and after the hook. Both calls have to give the same error text, even when the hooked one looks like the "right" message. For example, if the unhooked copy errors with `invalid argument #1 (string expected, got nil)` because it lost its name, and the hooked copy with `invalid argument #1 to 'nfcnormalize' (string expected, got nil)`, a game can tell them apart.
 
-This prints the two errors from the executor, which catches most mismatches:
+This prints the two errors from the executor. It only catches mismatches that also happen there, so a difference that only shows up when a game script makes the call needs the LocalScript version below:
 
 ```luau
 local Target = clonefunction(utf8.nfcnormalize)
