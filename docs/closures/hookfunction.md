@@ -64,6 +64,59 @@ end)
 print(Greet()) -- 2 1 hello
 ```
 
+### What a game script sees
+
+A common way for a game to find hooks is to call a function with a bad argument and compare the error, the `debug.info` result and the stack with what the unhooked function gives. If anything changes once the hook is in, the game knows.
+
+TT checks this from a LocalScript in its own place. It hooks a `clonefunction` copy of `utf8.nfcnormalize`, so the real function stays untouched, and the LocalScript calls that copy with `nil` before and after the hook. Both calls have to give the same error text, even when the hooked one looks like the "right" message. For example, if the unhooked copy errors with `'?'` as the function name and the hooked copy with `'nfcnormalize'`, a game can tell them apart.
+
+This prints the two errors from the executor, which catches most mismatches:
+
+```luau
+local Target = clonefunction(utf8.nfcnormalize)
+local BeforeError = select(2, pcall(Target, nil))
+
+local Original
+Original = hookfunction(Target, function(...)
+    return Original(...)
+end)
+local HookedError = select(2, pcall(Target, nil))
+restorefunction(Target)
+
+print(BeforeError)
+print(HookedError)
+print(BeforeError == HookedError) -- true
+```
+
+To see it the way a game script does, put this LocalScript in a place you own:
+
+```luau
+local Inspector = Instance.new("BindableFunction")
+Inspector.Name = "Inspector"
+Inspector.OnInvoke = function(Target)
+    local _, Problem = pcall(Target, nil)
+    return tostring(Problem), debug.info(Target, "sn")
+end
+Inspector.Parent = game:GetService("ReplicatedStorage")
+```
+
+Then run this from the executor. Both lines have to print the same thing:
+
+```luau
+local Inspector = game:GetService("ReplicatedStorage"):WaitForChild("Inspector")
+local Target = clonefunction(utf8.nfcnormalize)
+print(Inspector:Invoke(Target))
+
+local Original
+Original = hookfunction(Target, function(...)
+    return Original(...)
+end)
+print(Inspector:Invoke(Target))
+restorefunction(Target)
+```
+
+TT runs this with a Luau hook and again with a `newcclosure` hook.
+
 ## Must
 
 - Work on every mix of Luau, `newcclosure` and C functions, as the target and as the hook.
