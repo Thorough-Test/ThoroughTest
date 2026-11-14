@@ -41,7 +41,7 @@ Image.Parent = Screen
 Screen.Parent = gethui()
 ```
 
-Nothing should print.
+Nothing should print. If you hook `PreloadAsync` to get there, the hook has to be invisible too, for both `ContentProvider:PreloadAsync()` and `ContentProvider.PreloadAsync()`.
 
 ## Must
 
@@ -49,6 +49,7 @@ Nothing should print.
 - Accept UI as children.
 - Not be `PlayerGui`.
 - Hide its contents from a game script calling `game:GetDescendants()`, listening to `game.DescendantAdded` or calling `ContentProvider:PreloadAsync({ game })`.
+- If `PreloadAsync` is hooked to hide UI, leave no trace a game script can see: the same errors, raised by the same function, with no Luau code in its stack.
 
 ## Should
 
