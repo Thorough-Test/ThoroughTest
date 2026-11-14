@@ -38,6 +38,26 @@ To remove the hook later:
 hookmetamethod(game, "__namecall", OriginalNamecall)
 ```
 
+### What a game script sees
+
+A game can read a member that doesn't exist and compare the error before and after a hook. A hook that only calls the original has to give exactly the same error. Don't add or remove a script and line at the start of it.
+
+```luau
+local function Read()
+    return game.NotAMember
+end
+print(pcall(Read))
+
+local Original
+Original = hookmetamethod(game, "__index", function(...)
+    return Original(...)
+end)
+print(pcall(Read))
+hookmetamethod(game, "__index", Original)
+```
+
+Both lines have to print the same error.
+
 ## Must
 
 - Hook `__index` on tables, whether the metamethod is Luau or C.
