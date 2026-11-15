@@ -35,5 +35,5 @@ end
 ## Should
 
 - Return a new closure on each call.
-- Error on a script with no bytecode or an Instance that isn't a script, instead of returning nothing.
+- Error on an Instance that isn't a script, instead of returning nothing.
 - Error when given something that isn't an Instance.

@@ -8,7 +8,7 @@ summary: Deletes a folder and everything in it.
 delfolder(path: string) -> ()
 ```
 
-Deletes a folder, along with the files inside it.
+Deletes a folder, along with the files inside it. A folder that doesn't exist can error or do nothing, depending on the executor, so check [isfolder](isfolder.md) first if that matters.
 
 > **Note:** This can't be undone, so check the path before you call it.
 
@@ -34,6 +34,5 @@ print(isfolder("cache")) -- false
 
 ## Should
 
-- Do nothing for a folder that doesn't exist, instead of erroring.
 - Error when given a file, instead of doing nothing.
 - Error on a path outside the workspace, instead of doing nothing.

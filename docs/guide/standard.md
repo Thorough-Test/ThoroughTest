@@ -36,6 +36,8 @@ Erroring is the best answer, because it points straight at the problem. Returnin
 | --- | --- | --- | --- |
 | Any kind | Pass | Warning | Fail |
 
+Some things look like bad input but aren't. Deleting a file or folder that's already gone leaves the workspace the same either way, and a script with no bytecode is still a real script, so `nil` is a fair answer for it. Erroring and returning nothing both pass for these.
+
 ## Options and features
 
 If a feature has a real use and it not working causes a problem where it's used, it's a fail, even if most scripts never touch it. The `Cookies` option on `request` and reading a paused thread with `debug.getstack` both count, because a script using them gets the wrong result.

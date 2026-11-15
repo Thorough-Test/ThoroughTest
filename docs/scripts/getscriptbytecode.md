@@ -31,5 +31,5 @@ print(#Bytecode)
 
 ## Should
 
-- Error on a script with no bytecode or an Instance that isn't a script, instead of returning nothing or an empty string.
+- Error on an Instance that isn't a script, instead of returning nothing or an empty string.
 - Error when given something that isn't an Instance.

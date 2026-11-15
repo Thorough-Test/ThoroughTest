@@ -8,7 +8,7 @@ summary: Deletes a file.
 delfile(path: string) -> ()
 ```
 
-Deletes a file from the workspace.
+Deletes a file from the workspace. A file that doesn't exist can error or do nothing, depending on the executor, so check [isfile](isfile.md) first if that matters.
 
 ## Parameters
 
@@ -30,5 +30,4 @@ print(isfile("temp.txt")) -- false
 
 ## Should
 
-- Do nothing for a file that doesn't exist, instead of erroring.
 - Error when given a folder, instead of doing nothing.
