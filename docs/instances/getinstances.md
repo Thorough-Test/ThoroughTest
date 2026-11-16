@@ -25,4 +25,7 @@ end
 - Return a non-empty list of instances.
 - Include instances in the game, like `workspace`.
 - Include instances parented to `nil`.
+
+## Should
+
 - Include instances no script has used yet, like the children of a cloned instance. A list of only the instances Lua has already seen misses these.
