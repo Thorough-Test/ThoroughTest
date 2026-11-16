@@ -24,7 +24,7 @@ The fake frames are never called. They only exist to be looked at. Frame 1 is th
 | `thread` | The parent thread. `coroutine.running()` returns it, and the function inherits its identity and script. |
 | `identity` | The thread identity to run at. |
 | `script` | What `getcallingscript` returns. |
-| `env` | The environment to run with. |
+| `env` | The thread's global table. `getfenv(0)` returns this exact table inside the call. The function keeps its own environment, so its globals don't change. |
 
 ## Parameters
 
@@ -57,7 +57,8 @@ trampoline_call(CheckCaller, {
 - Never call a fake frame's function.
 - Accept a stack from `debug.getcallstack`.
 - Honor `thread` without running or resuming it, and inherit its identity.
-- Honor `script`, `identity` and `env`.
+- Honor `script` and `identity`.
+- Use `env` as the thread's global table, so `getfenv(0)` returns that exact table and not a copy or a wrapper.
 - Leave the caller's identity alone.
 
 ## Should
