@@ -34,6 +34,7 @@ setscriptable(Part, "MaterialVariantSerialized", false)
 
 - Return the previous state.
 - Make the property readable, and hidden again when turned off.
+- Only change the instance it was given, so other instances and game scripts can't read the property.
 - Return `true` for a property that was already scriptable.
 
 ## Should

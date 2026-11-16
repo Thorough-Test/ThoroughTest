@@ -29,6 +29,7 @@ print(Part == Folder.Part) -- false
 
 - Make the next lookup return a new reference.
 - Leave the instance in its parent.
+- Keep the old reference working, so changes through it still reach the instance.
 
 ## Should
 

@@ -29,6 +29,7 @@ end
 ## Must
 
 - Fire `MouseClick` from any distance, passing the local player.
+- Work on a ClickDetector inside a Model, not just one directly in a part.
 - Fire `RightMouseClick`, `MouseHoverEnter` and `MouseHoverLeave` when asked.
 - Fire without changing `MaxActivationDistance` or moving the part.
 - Reach the server.

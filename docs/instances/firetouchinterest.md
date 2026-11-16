@@ -35,6 +35,7 @@ firetouchinterest(Root, Coin, 1)
 - Fire `TouchEnded` with `1`.
 - Reach the server for both.
 - Fire the touch without moving either part, even for a moment.
+- Leave the size, `CanTouch` and `CanCollide` of both parts alone.
 
 ## Should
 

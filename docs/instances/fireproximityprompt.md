@@ -25,6 +25,7 @@ fireproximityprompt(Prompt)
 ## Must
 
 - Trigger from any distance, passing the local player.
+- Work on a prompt inside an Attachment, not just one directly in a part.
 - Skip `HoldDuration`.
 - Fire without changing the prompt's properties, even for a moment, or moving the part.
 - Reach the server.

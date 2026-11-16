@@ -26,7 +26,7 @@ end
 
 ## Must
 
-- Return the script for a game script's thread.
+- Return the script that owns a game script's thread, not just any script.
 - Return `nil` for executor threads and new coroutines.
 
 ## Should

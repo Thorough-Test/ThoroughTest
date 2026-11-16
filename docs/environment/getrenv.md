@@ -23,6 +23,7 @@ end
 ## Must
 
 - Return the real table, with `print`, `game`, `_G` and `shared`.
+- Have the same `_G` and `shared` tables that game scripts use.
 - Be a different table from `getgenv`.
 - Keep executor globals out of it.
 - Keep values written to it.

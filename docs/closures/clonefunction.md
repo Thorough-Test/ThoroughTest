@@ -37,7 +37,7 @@ print(SafeGetName()) -- real
 - Keep the same environment, and share upvalues with the original.
 - Keep the same constants and `debug.info` details.
 - Run the same as the original, including yielding.
-- Return a new C closure for a C function.
+- Return a new C closure for a C function, which looks the same as the original in a game script's `debug.info` and errors the same way.
 - Work on Roblox methods and on other clones.
 - Keep the clone separate: `setfenv` on the clone doesn't change the original, and hooking the original doesn't change the clone.
 
