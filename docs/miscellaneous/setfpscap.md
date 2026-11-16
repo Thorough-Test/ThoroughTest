@@ -27,6 +27,7 @@ setfpscap(0)
 
 - Keep the frame rate near the cap.
 - Remove the cap with `0`.
+- Never slow the game down when the cap is raised. TT measures the frame rate before calling it, and a game that's already too slow to test is skipped, not passed.
 - Never accept a negative cap.
 
 ## Should
