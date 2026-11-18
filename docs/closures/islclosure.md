@@ -28,7 +28,4 @@ print(islclosure(newcclosure(function() end))) -- false
 
 - Return `true` for Luau functions, including game script closures.
 - Return `false` for C functions, Roblox methods and `newcclosure` wrappers.
-
-## Should
-
-- Error when given something that isn't a function.
+- Never return `true` for something that isn't a function.

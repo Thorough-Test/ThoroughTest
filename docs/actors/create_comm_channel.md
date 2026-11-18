@@ -38,4 +38,3 @@ run_on_actor(getactors()[1], [[
 ## Should
 
 - Have a `Fire` method on the returned channel, so sending doesn't need `get_comm_channel`.
-- Error from `get_comm_channel` when the channel doesn't exist.

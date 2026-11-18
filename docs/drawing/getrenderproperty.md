@@ -29,7 +29,3 @@ print(getrenderproperty(Circle, "Radius")) -- 50
 - Return the property's value.
 - Never return a value for a property that doesn't exist.
 - Never return a value for a table that isn't a drawing.
-
-## Should
-
-- Error on a property that doesn't exist or a table that isn't a drawing, instead of returning nothing.

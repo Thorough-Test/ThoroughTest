@@ -67,5 +67,4 @@ local Config = filtergc("table", {
 
 ## Should
 
-- Error on an unknown kind, instead of returning nothing.
 - Error when the filters aren't a table.

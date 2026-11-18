@@ -46,7 +46,3 @@ Secret()
 - Read the caller at level 2.
 - Read a paused thread when it's passed first.
 - Never return a value for a C function's level or a level that doesn't exist.
-
-## Should
-
-- Error on those levels, instead of returning nothing.

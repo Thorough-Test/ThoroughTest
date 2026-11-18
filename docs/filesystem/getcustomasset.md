@@ -33,4 +33,3 @@ Image.Parent = Instance.new("ScreenGui", gethui())
 
 - Keep the file's extension in the url.
 - Return a new url after the file changes, so Roblox doesn't show the old one.
-- Error on a file that doesn't exist, instead of returning nothing.

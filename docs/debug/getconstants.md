@@ -35,7 +35,3 @@ end
 - Work with a stack level.
 - Read functions from game scripts.
 - Never list constants for a C function.
-
-## Should
-
-- Error on C functions, instead of returning nothing.

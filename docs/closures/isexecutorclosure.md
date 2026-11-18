@@ -40,8 +40,8 @@ print(isexecutorclosure(OnClimbing)) -- false
 
 - Return `true` for functions you write, `newcclosure` wrappers, `loadstring` chunks and executor functions.
 - Return `false` for Roblox globals, Roblox methods and functions from game scripts.
+- Never return `true` for something that isn't a function.
 
 ## Should
 
 - Return `true` for the result of `getscriptclosure`, since the executor created that closure.
-- Error when given something that isn't a function.

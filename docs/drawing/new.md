@@ -74,5 +74,5 @@ print("ready")
 - Create and destroy 1000 drawings in under 3 seconds.
 - Return `Font` as the id it was set to.
 - Accept `Centered` and `Outlined` as aliases.
-- Error on a type or a property that doesn't exist, instead of returning nothing.
+- Error on a type that doesn't exist, instead of returning nothing.
 - Error when a property is set to the wrong type.

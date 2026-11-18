@@ -39,5 +39,4 @@ print(getfunctionhash(MakeCounter()) == getfunctionhash(MakeCounter())) -- true
 
 ## Should
 
-- Error on C functions instead of returning nothing.
 - Error when given something that isn't a function.

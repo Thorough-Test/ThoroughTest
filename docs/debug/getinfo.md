@@ -61,5 +61,4 @@ print(Info.name, Info.numparams, Info.nups, Info.what)
 
 ## Should
 
-- Error on a stack level that doesn't exist, instead of returning nothing.
 - Error when given something that isn't a function or a number.

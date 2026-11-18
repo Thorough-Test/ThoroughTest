@@ -29,7 +29,4 @@ print(cache.iscached(Part)) -- false
 - Return `true` for a new instance.
 - Return `false` after `cache.invalidate`.
 - Return `true` again once a lookup caches it.
-
-## Should
-
-- Error when given something that isn't an instance.
+- Never return `true` for something that isn't an instance.

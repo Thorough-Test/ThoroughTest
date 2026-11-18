@@ -30,11 +30,16 @@ Function pages use the same split. **Must** rules are the ones that fail, and **
 
 Bad input is anything a function can't use: the wrong type, like a number where a function belongs, the wrong kind, like a Part where a script belongs, or something that doesn't exist, like a missing file.
 
-Erroring is the best answer, because it points straight at the problem. Returning `nil`, `false` or an empty table is fair, since a script that passes good input never sees the difference, so that's a warning. Making up a result or doing something with the bad input is a fail, because the function is lying about what happened.
+Lookups and yes or no questions are different. When a lookup has nothing to find, like a missing file, a script that isn't running or the constants of a C function, `nil`, `false` or an empty table is an honest answer, the same way `FindFirstChild` returns `nil`. A yes or no question like `iscclosure` can answer `false` for a number, because that's true. Erroring and returning nothing both pass there.
+
+Everywhere else erroring is the better answer, because it points straight at the problem. A wrong type, like a number where an Instance belongs, is a bug in the script, and a function that changes something should say when it couldn't. Returning nothing there is a warning.
+
+Making up a result or doing something with the bad input is always a fail, because the function is lying about what happened.
 
 | Bad input | Errors | Returns nothing | Makes up a result or acts on it |
 | --- | --- | --- | --- |
-| Any kind | Pass | Warning | Fail |
+| A lookup with nothing to find, or a yes or no question | Pass | Pass | Fail |
+| Anything else | Pass | Warning | Fail |
 
 Some things look like bad input but aren't. Deleting a file or folder that's already gone leaves the workspace the same either way, and a script with no bytecode is still a real script, so `nil` is a fair answer for it. Erroring and returning nothing both pass for these.
 

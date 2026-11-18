@@ -27,7 +27,4 @@ print(cansignalreplicate(Instance.new("Part").Touched)) -- false
 
 - Return `true` for signals that replicate.
 - Return `false` for signals that don't, like `Touched` and bindable events.
-
-## Should
-
-- Error without a signal.
+- Never return `true` without a signal.

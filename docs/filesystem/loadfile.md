@@ -33,4 +33,3 @@ print(Add(1)) -- 11
 ## Should
 
 - Include the file name in the chunk name.
-- Error on a file that doesn't exist, instead of returning nothing.

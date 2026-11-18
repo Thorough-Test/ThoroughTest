@@ -30,4 +30,3 @@ print(base64decode("SGVsbG8gV29ybGQh")) -- Hello World!
 ## Should
 
 - Error when given `nil`.
-- Error on text with characters that aren't base64, instead of returning nothing.

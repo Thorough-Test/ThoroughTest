@@ -29,8 +29,8 @@ print(isscriptable(Part, "MaterialVariantSerialized")) -- false
 - Return `true` for normal properties and `false` for hidden ones.
 - Match whether the property can be indexed.
 - Never return `true` for a property that doesn't exist.
+- Never return `true` for something that isn't an instance.
 
 ## Should
 
-- Error on a property that doesn't exist.
-- Error when given something that isn't an instance.
+- Return `nil` or error on a property that doesn't exist, instead of `false`, which means the property is hidden.

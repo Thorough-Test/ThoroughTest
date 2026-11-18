@@ -36,5 +36,4 @@ print(Environment.onSwimming) -- function: 0x...
 ## Should
 
 - Return the same table for the same script.
-- Error on a script that isn't running or an Instance that isn't a script, instead of returning nothing.
 - Error when given something that isn't an Instance.

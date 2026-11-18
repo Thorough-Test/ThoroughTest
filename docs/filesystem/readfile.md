@@ -27,7 +27,3 @@ print(readfile("hello.txt")) -- Hello
 - Return exactly what's in the file.
 - Return an empty string for an empty file.
 - Never return a value for a missing file or a folder.
-
-## Should
-
-- Error on a missing file or a folder, instead of returning nothing.

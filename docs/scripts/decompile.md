@@ -36,5 +36,4 @@ writefile("Config.lua", decompile(Module))
 ## Should
 
 - Produce output that compiles for every script, not only for modules.
-- Error on an Instance that isn't a script, instead of returning nothing.
 - Error when given something that isn't an Instance.

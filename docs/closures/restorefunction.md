@@ -41,5 +41,4 @@ print(Greet()) -- hello
 
 ## Should
 
-- Error on a function that was never hooked.
 - Error when given something that isn't a function.

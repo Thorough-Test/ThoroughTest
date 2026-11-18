@@ -37,8 +37,3 @@ end
 - Return an empty table for a function with none.
 - Read functions from game scripts.
 - Never show what's inside a C function like `print` or a `newcclosure` wrapper.
-
-## Should
-
-- Error on C functions, instead of returning an empty table.
-- Error on a `coroutine.wrap` function, instead of returning the thread inside it.

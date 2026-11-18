@@ -37,4 +37,3 @@ end
 ## Should
 
 - Accept a path ending in a slash.
-- Error on a folder that doesn't exist or a file, instead of returning nothing.

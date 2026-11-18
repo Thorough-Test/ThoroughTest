@@ -53,5 +53,5 @@ Socket:Send("hello")
 
 ## Should
 
-- Error on an invalid url, or when nothing is listening, instead of returning nothing.
+- Error on an invalid url, instead of returning nothing.
 - Let a second `Close` do nothing.

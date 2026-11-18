@@ -32,7 +32,3 @@ end
 - Match `debug.getconstants` at every index.
 - Work with a stack level.
 - Never return a value for an index past the end or for a C function.
-
-## Should
-
-- Error on an index past the end and on C functions, instead of returning nothing.

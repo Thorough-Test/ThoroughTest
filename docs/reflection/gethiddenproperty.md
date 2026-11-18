@@ -37,6 +37,5 @@ print(gethiddenproperty(Part, "NetworkOwnerV3")) -- 0 true
 
 ## Should
 
-- Error on a property that doesn't exist, instead of returning nothing.
 - Return `NetworkOwnerV3` as a number.
 - Error when given something that isn't an instance.

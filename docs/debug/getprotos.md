@@ -41,7 +41,3 @@ end
 - Never run a proto's code when it's called.
 - Read game scripts.
 - Never list protos for a C function.
-
-## Should
-
-- Error on C functions, instead of returning nothing.
