@@ -14,7 +14,7 @@ Returns an object for each connection on a signal.
 | --- | --- |
 | `Enabled` | Whether the connection runs when the signal fires. |
 | `Function` | The connected function. `nil` for C connections and other Luau states. |
-| `Thread` | The thread that made the connection. For `:Wait`, the waiting thread. |
+| `Thread` | The thread that made the connection. For `:Wait`, the waiting thread. `nil` for C connections and other Luau states. |
 | `LuaConnection` | `true` if the connection was made from Luau. |
 | `ForeignState` | `true` if it belongs to another Luau state, like an Actor. |
 
