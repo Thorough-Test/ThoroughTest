@@ -35,5 +35,5 @@ firesignal(Button.MouseButton1Click)
 
 ## Should
 
-- Start handlers right away. Waiting for deferred signals is fine, so this is only a warning.
+- Start handlers right away when the game's own signals do. In games with deferred signals, waiting is fine.
 - Error when given something that isn't a signal.

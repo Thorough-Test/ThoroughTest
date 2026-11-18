@@ -32,7 +32,7 @@ setfpscap(0)
 
 ## Should
 
-- Have `getfpscap`, and return the value that was set.
+- Have `getfpscap`, and return the value that was set, or the highest cap it allows when that's at least 240.
 - Accept numbers written as strings.
 - Error on a negative cap, instead of doing nothing.
 - Error with no argument, or with a boolean.
