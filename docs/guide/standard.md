@@ -30,6 +30,8 @@ Function pages use the same split. **Must** rules are the ones that fail, and **
 
 Bad input is anything a function can't use: the wrong type, like a number where a function belongs, the wrong kind, like a Part where a script belongs, or something that doesn't exist, like a missing file.
 
+Signals and Instances are both userdata, but a signal where an Instance belongs is still the wrong type. Checking only that the value is userdata isn't enough.
+
 Lookups and yes or no questions are different. When a lookup has nothing to find, like a missing file, a script that isn't running or the constants of a C function, `nil`, `false` or an empty table is an honest answer, the same way `FindFirstChild` returns `nil`. A yes or no question like `iscclosure` can answer `false` for a number, because that's true. Erroring and returning nothing both pass there.
 
 Everywhere else erroring is the better answer, because it points straight at the problem. A wrong type, like a number where an Instance belongs, is a bug in the script, and a function that changes something should say when it couldn't. Returning nothing there is a warning.

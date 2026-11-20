@@ -33,7 +33,7 @@ print(gethiddenproperty(Part, "NetworkOwnerV3")) -- 0 true
 - Read `size_xml` on a `Fire`.
 - Leave a hidden property hidden after reading it.
 - Read `BinaryString` properties.
-- Never return a value for a property that doesn't exist.
+- Never return a value for a property that doesn't exist, or exists only on another class.
 
 ## Should
 

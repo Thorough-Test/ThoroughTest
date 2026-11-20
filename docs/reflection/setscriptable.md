@@ -36,8 +36,9 @@ setscriptable(Part, "MaterialVariantSerialized", false)
 - Make the property readable, and hidden again when turned off.
 - Only change the instance it was given, so other instances and game scripts can't read the property.
 - Return `true` for a property that was already scriptable.
+- Never make a property from another class readable.
 
 ## Should
 
-- Error on a property that doesn't exist.
+- Error on a property that doesn't exist or belongs to another class.
 - Error when given something that isn't an instance.

@@ -137,6 +137,7 @@ Both lines have to match. Hooks made with `newcclosure` have to pass this too.
 - Allow stacked hooks, with each returned function calling exactly one layer down.
 - Keep the error messages of the original and the hooked function, for Roblox methods too.
 - Hook functions inside running game scripts.
+- Run the hook when the engine calls the target, like a game script's signal handler firing, with the same arguments.
 - Look the same to a game script as the unhooked function: the same `debug.info`, the same error including the calling line at its start, raised by the hooked function itself, and no Luau code from the hook in the game script's stack.
 - Change what the server receives when `FireServer` is hooked, without the original call also going through.
 

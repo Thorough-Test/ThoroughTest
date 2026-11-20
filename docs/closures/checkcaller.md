@@ -30,3 +30,4 @@ end)
 - Return `true` inside `task.spawn`, `task.delay`, `task.defer` and the executor's own signal connections.
 - Return `true` in a metamethod hook when the executor made the call.
 - Return `false` in a metamethod hook when a game script made the call.
+- Return `false` in a hook on a game script's signal handler when the signal fires it.

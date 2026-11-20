@@ -30,10 +30,10 @@ print(Fire.Size) -- 6
 
 - Change hidden properties.
 - Change normal properties too.
-- Never accept a property that doesn't exist.
+- Never accept a property that doesn't exist, or exists only on another class.
 
 ## Should
 
 - Return `true` for hidden properties and `false` for normal ones.
-- Error on a property that doesn't exist, instead of doing nothing.
+- Error on a property that doesn't exist or belongs to another class, instead of doing nothing.
 - Error when given something that isn't an instance.
