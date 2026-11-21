@@ -15,7 +15,7 @@ Returns the table behind your executor's globals. Anything you put here can be r
 ```luau
 getgenv().Coins = 100
 
-loadstring("print(coins)")() -- 100
+loadstring("print(Coins)")() -- 100
 ```
 
 ## Must
