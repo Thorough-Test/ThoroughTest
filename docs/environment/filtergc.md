@@ -66,7 +66,7 @@ local Config = filtergc("table", {
 - Return an empty table or `nil` when nothing matches.
 - Require all of `Keys`, and require the exact values in `KeyValuePairs`.
 - Never return matches for an unknown kind.
-- Search no slower than a Luau loop going through a list from `getgc`, even with lots of big tables in memory. TT gets the list before it starts timing, so how fast `getgc` is doesn't change the result. Look each key up instead of going through every entry of every table.
+- Search tables by `Keys` no slower than a Luau loop going through a list from `getgc`, even with lots of big tables in memory. TT gets the list before it starts timing, so how fast `getgc` is doesn't change the result. Look each key up instead of going through every entry of every table.
 - Read tables raw, so no metamethods run on the tables it searches.
 
 ## Should
