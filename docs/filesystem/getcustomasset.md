@@ -23,10 +23,24 @@ Image.Image = getcustomasset("logo.png")
 Image.Parent = Instance.new("ScreenGui", gethui())
 ```
 
+### Fonts
+
+A font takes two files: the `.ttf` and a font family `.json` that points to it.
+
+```luau
+writefile("MyFont.json", game:GetService("HttpService"):JSONEncode({
+    name = "MyFont",
+    faces = { { name = "Regular", weight = 400, style = "normal", assetId = getcustomasset("MyFont.ttf") } },
+}))
+
+local Label = Instance.new("TextLabel")
+Label.FontFace = Font.new(getcustomasset("MyFont.json"))
+```
+
 ## Must
 
 - Return an `rbxasset://` url.
-- Return a url Roblox can really load.
+- Return a url Roblox can load, for images, sounds (`.mp3`) and fonts (a `.ttf` file listed in a font family `.json`).
 - Never return a value for a file that doesn't exist.
 
 ## Should

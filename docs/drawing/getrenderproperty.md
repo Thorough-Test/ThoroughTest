@@ -19,9 +19,9 @@ Does the same thing as `drawing[property]`. It's useful when you have the proper
 
 ```luau
 local Circle = Drawing.new("Circle")
-Circle.Radius = 50
+Circle.Radius = 147
 
-print(getrenderproperty(Circle, "Radius")) -- 50
+print(getrenderproperty(Circle, "Radius")) -- 147
 ```
 
 ## Must

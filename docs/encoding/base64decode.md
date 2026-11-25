@@ -17,7 +17,7 @@ The opposite of [base64encode](base64encode.md). `base64_decode` is also accepte
 ## Example
 
 ```luau
-print(base64decode("SGVsbG8gV29ybGQh")) -- Hello World!
+print(base64decode("cmltdXJ1IHRlbXBlc3Q=")) -- rimuru tempest
 ```
 
 ## Must

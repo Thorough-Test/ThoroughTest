@@ -26,11 +26,15 @@ for _, Detector in workspace:GetDescendants() do
 end
 ```
 
+### What a game script sees
+
+A game script can listen to its own detector's events, and to property changes on the detector and its part. It should see one click from the local player and nothing else: no other event firing, and no change to `MaxActivationDistance` or the part's position, even for a frame.
+
 ## Must
 
 - Fire `MouseClick` from any distance, passing the local player.
-- Work on a ClickDetector inside a Model, not just one directly in a part.
-- Fire `RightMouseClick`, `MouseHoverEnter` and `MouseHoverLeave` when asked.
+- Work on a ClickDetector inside a Model as well as one directly in a part.
+- Fire only the event asked for, whether it's `MouseClick`, `RightMouseClick`, `MouseHoverEnter` or `MouseHoverLeave`.
 - Fire without changing `MaxActivationDistance` or moving the part.
 - Reach the server.
 

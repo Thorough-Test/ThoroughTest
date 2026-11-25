@@ -5,14 +5,14 @@ summary: Writes a property that scripts normally can't.
 # sethiddenproperty
 
 ```luau
-sethiddenproperty(instance: Instance, property: string, value: any) -> boolean
+sethiddenproperty(object: Object, property: string, value: any) -> boolean
 ```
 
 Sets a property's value. It returns `true` if the property was hidden and `false` if it was a normal one. Both are written.
 
 ## Parameters
 
-- `instance`: The instance.
+- `object`: The instance, or another Object like an `EditableImage`.
 - `property`: The property's name.
 - `value`: The new value.
 
@@ -34,6 +34,7 @@ print(Fire.Size) -- 6
 
 ## Should
 
+- Work on Objects that aren't Instances, like `EditableImage`.
 - Return `true` for hidden properties and `false` for normal ones.
 - Error on a property that doesn't exist or belongs to another class, instead of doing nothing.
-- Error when given something that isn't an instance.
+- Error when given something that isn't an Object.

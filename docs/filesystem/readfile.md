@@ -17,9 +17,9 @@ Returns a file's contents.
 ## Example
 
 ```luau
-writefile("hello.txt", "Hello")
+writefile("notes.txt", "jarvis, make me ud")
 
-print(readfile("hello.txt")) -- Hello
+print(readfile("notes.txt")) -- jarvis, make me ud
 ```
 
 ## Must

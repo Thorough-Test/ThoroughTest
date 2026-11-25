@@ -31,7 +31,7 @@ end
 - List every file and folder directly inside, and nothing deeper.
 - Return relative paths that work with other file functions.
 - List the workspace when given `""`.
-- Keep unicode file names intact, emoji included.
+- Return unicode file names unchanged, emoji included.
 - Never return a value for a folder that doesn't exist, or for a file.
 
 ## Should

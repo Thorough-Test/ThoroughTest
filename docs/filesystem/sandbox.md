@@ -20,7 +20,7 @@ Scripts should only ever touch the workspace. If a path tries to leave, the func
 
 ## Paths that should work
 
-A path that stays inside the workspace is fine, even if it looks unusual. `folder/unused/../file.txt` is simply `folder/file.txt`.
+A path that stays inside the workspace is fine, even if it looks unusual. `folder/unused/../file.txt` is the same as `folder/file.txt`.
 
 ## Example
 

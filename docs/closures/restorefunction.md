@@ -18,7 +18,7 @@ Puts a hooked function back the way it was, no matter how many hooks are on it. 
 
 ```luau
 local function Greet()
-    return "hello"
+    return "sup"
 end
 
 hookfunction(Greet, function()
@@ -27,7 +27,7 @@ end)
 print(Greet()) -- hooked
 
 restorefunction(Greet)
-print(Greet()) -- hello
+print(Greet()) -- sup
 ```
 
 ## Must

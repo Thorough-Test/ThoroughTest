@@ -1,5 +1,5 @@
 ---
-summary: What the verdict, the score, warnings and missing functions actually mean.
+summary: What the verdict, the score, warnings and missing functions mean.
 ---
 
 # Reading results
@@ -46,12 +46,12 @@ Fix that function first, then run again.
 Score = Passed / (Passed + Failed + Missing)
 ```
 
-The console also prints a second number that leaves missing functions out. That one tells you how well the functions an executor has actually work. A high second number and a low first number means it's correct but incomplete.
+The console also prints a second number that leaves missing functions out. That one shows how well the executor's existing functions work. A high second number and a low first number means it's correct but incomplete.
 
 ## The console view
 
 The terminal button on a result page shows the run exactly as it printed, timestamps included. This is the best thing to send a developer when something looks wrong.
 
-## What gets stored
+## What's stored
 
 TT doesn't store your IP, username or user ID. If a test prints something that contains your name or user ID, the game server removes it before anything leaves the place.

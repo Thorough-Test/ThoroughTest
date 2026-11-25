@@ -58,6 +58,10 @@ hookmetamethod(game, "__index", Original)
 
 Both lines have to print the same error.
 
+Every method call a game script makes goes through a `__namecall` hook, so a game can also time its own calls. A hook that only calls the original shouldn't make them much slower.
+
+A `pcall` inside a `__namecall` hook should catch errors too. If one gets past it, the game script's method call errors.
+
 ## Must
 
 - Hook `__index` on tables, whether the metamethod is Luau or C.
@@ -71,12 +75,14 @@ Both lines have to print the same error.
 - Change what the server receives when a `__namecall` hook changes a `FireServer` call, without the original call also going through.
 - Never hook a metamethod that doesn't exist or an object with no metatable.
 - Leave the metamethod working when the hook isn't a function.
-- Give a game script the same error through a hooked `__index`, `__namecall` or `__newindex`, raised by the same function, with no Luau code from the hook in its stack.
+- Keep the error a game script gets the same after hooking `__index`, `__namecall` or `__newindex`, raised by the same function, with no Luau code from the hook in its stack.
+- Add no extra frames to a game script's stack, even C ones.
 
 ## Should
 
-- Keep the same function after a hook is restored.
 - Make a hooked `__namecall` count as a C function.
-- Add no extra frames to a game script's stack, even C ones.
+- Let a `pcall` inside a hook catch errors.
+- Keep the same function after a hook is restored.
+- Keep method calls fast. Every method call in the game goes through a `__namecall` hook, so one that only calls the original shouldn't make a game script's method calls 6 times slower or more.
 - Error, instead of returning nothing, on a metamethod that doesn't exist or an object with no metatable.
 - Error when the hook isn't a function.

@@ -19,11 +19,11 @@ Returns the constant at `index`. Use [debug.getconstants](getconstants.md) when 
 
 ```luau
 local function Greet()
-    return "hello"
+    return "sup"
 end
 
 for Index, Value in debug.getconstants(Greet) do
-    print(Index, debug.getconstant(Greet, Index)) -- 1 hello
+    print(Index, debug.getconstant(Greet, Index)) -- 1 sup
 end
 ```
 

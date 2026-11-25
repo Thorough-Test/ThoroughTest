@@ -31,9 +31,8 @@ writefile("Config.lua", decompile(Module))
 - Give different output for different scripts.
 - Produce a module that compiles, runs and returns its table.
 - Keep the module's behavior: math, loops, `break`, conditions, `nil` and `false` handling, closures, varargs, methods and tables.
-- Never return a value for an Instance that isn't a script.
 
 ## Should
 
-- Produce output that compiles for every script, not only for modules.
+- Produce output that compiles for LocalScripts as well as modules.
 - Error when given something that isn't an Instance.

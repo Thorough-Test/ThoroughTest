@@ -12,6 +12,8 @@ Finds things in the garbage collector without writing a loop around [getgc](getg
 
 Returns a table of matches. With `returnOne`, it returns the first match, or `nil` if there isn't one.
 
+It reads every table raw. A game can leave a table with an `__index` or `__iter` that logs when it runs, so a search that reads tables normally sets it off, and `__index` can make a key look like it's there when it isn't.
+
 ## Function filters
 
 Use these with `filtergc("function", ...)`.
@@ -64,6 +66,8 @@ local Config = filtergc("table", {
 - Return an empty table or `nil` when nothing matches.
 - Require all of `Keys`, and require the exact values in `KeyValuePairs`.
 - Never return matches for an unknown kind.
+- Search no slower than a Luau loop going through a list from `getgc`, even with lots of big tables in memory. TT gets the list before it starts timing, so how fast `getgc` is doesn't change the result. Look each key up instead of going through every entry of every table.
+- Read tables raw, so no metamethods run on the tables it searches.
 
 ## Should
 

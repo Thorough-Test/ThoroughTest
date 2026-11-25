@@ -17,7 +17,7 @@ Encodes a string as base64, which is a safe way to send binary data through some
 ## Example
 
 ```luau
-print(base64encode("Hello World!")) -- SGVsbG8gV29ybGQh
+print(base64encode("rimuru tempest")) -- cmltdXJ1IHRlbXBlc3Q=
 ```
 
 ## Must

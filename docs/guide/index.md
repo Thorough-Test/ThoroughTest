@@ -34,7 +34,7 @@ ThoroughTest, or TT, runs a Roblox executor through a set of real tests and tell
 | [Closures](../closures/index.md) | Hooking, cloning and telling function types apart |
 | [Debug](../debug/index.md) | Reading and changing upvalues, constants, stacks and protos |
 | [Drawing](../drawing/index.md) | Drawing on the screen outside of the game's UI |
-| [Encoding](../encoding/index.md) | base64, lz4, hashing and AES |
+| [Encoding](../encoding/index.md) | base64, lz4, zstd, hashing and AES |
 | [Environment](../environment/index.md) | The garbage collector, the registry and the global tables |
 | [Filesystem](../filesystem/index.md) | Files in the executor's workspace |
 | [Instances](../instances/index.md) | The instance cache, hidden UI and firing clicks, prompts and touches |

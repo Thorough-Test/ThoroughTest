@@ -17,7 +17,7 @@ Compresses a string with LZ4. Save the original length too, because [lz4decompre
 ## Example
 
 ```luau
-local Text = string.rep("hello ", 100)
+local Text = string.rep("mandy ", 100)
 local Compressed = lz4compress(Text)
 
 print(#Text, #Compressed) -- 600 21

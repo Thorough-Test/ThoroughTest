@@ -23,13 +23,13 @@ With `activated` set to `true`, it returns a table of the real closures that exi
 ```luau
 local function Outer()
     local function Inner()
-        return "inner ran"
+        return "ok"
     end
     return Inner
 end
 
 local Proto = debug.getproto(Outer, 1)
-print(debug.getconstants(Proto)[1]) -- inner ran
+print(debug.getconstants(Proto)[1]) -- ok
 
 local Live = Outer()
 print(debug.getproto(Outer, 1, true)[1] == Live) -- true

@@ -17,7 +17,7 @@ Returns every upvalue the function uses, in the same order as [debug.getupvalue]
 ## Example
 
 ```luau
-local Coins, Inventory = 100, {}
+local Coins, Inventory = 182, {}
 
 local function Buy(Item)
     Coins -= 1
@@ -27,7 +27,7 @@ end
 for Index, Value in debug.getupvalues(Buy) do
     print(Index, Value)
 end
--- 1 100
+-- 1 182
 -- 2 table: 0x...
 ```
 
@@ -36,4 +36,4 @@ end
 - List every upvalue with its real value.
 - Return an empty table for a function with none.
 - Read functions from game scripts.
-- Never show what's inside a C function like `print` or a `newcclosure` wrapper.
+- Never show what's inside a C function like `print`. A `newcclosure` wrapper may show the function it wraps, since that is its real upvalue.

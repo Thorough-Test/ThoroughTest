@@ -19,14 +19,18 @@ Pass the id into your Actor code, connect to `Channel.Event` on one side, and ca
 local Id, Channel = create_comm_channel()
 
 Channel.Event:Connect(function(Message)
-    print(Message) -- hello from the actor
+    print(Message) -- loaded
 end)
 
 run_on_actor(getactors()[1], [[
     local Id = ...
-    get_comm_channel(Id):Fire("hello from the actor")
+    get_comm_channel(Id):Fire("loaded")
 ]], Id)
 ```
+
+### What a game script sees
+
+A channel isn't something a game script can find. A BindableEvent parented into the game fires `DescendantAdded`, so creating or using a channel must not add one.
 
 ## Must
 
@@ -34,6 +38,7 @@ run_on_actor(getactors()[1], [[
 - Send every value through `get_comm_channel` in the same Luau state, nils included.
 - Deliver messages from inside an Actor to the outside, including Roblox values like `Vector3`.
 - Let code inside an Actor connect to the channel and receive messages from the outside.
+- Add no instances that fire a game script's `DescendantAdded`.
 
 ## Should
 

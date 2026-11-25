@@ -31,6 +31,10 @@ print(GetName()) -- hooked
 print(SafeGetName()) -- real
 ```
 
+### What a game script sees
+
+A clone of a C function has to pass for the original. A game script running `debug.info` on either one gets the same answer, and calling either one with a bad argument raises the same error.
+
 ## Must
 
 - Return a new function, not the one it was given.

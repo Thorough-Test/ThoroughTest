@@ -8,11 +8,13 @@ The standard is ThoroughTest's answer to one question: what should a Roblox scri
 
 ## What it's based on
 
-Three things shape every rule.
+Four things shape every rule.
 
 **Real scripts.** The rules come from what scripts do every day, like hooking functions, reading files, searching the garbage collector and talking to the server. A difference that wouldn't affect a real script doesn't become a rule.
 
 **What developers expect.** Most of these functions are named after something in Luau or Roblox, or have been around long enough that people know how they act. A function should behave the way an experienced developer would guess before reading its page.
+
+**What games can see.** A game script runs next to the executor and can look at what's around it. If a function leaves behind something a game script can notice, like a new service, an executor global or the executor's code in its call stack, a script using that function can get caught. That counts as not doing its job, even when the result is right.
 
 **What executors can build.** A rule only helps if it can be met, so each one has to be within reach of a team working on a normal Roblox client. Features only one executor offers aren't part of the standard, since scripts can't depend on them.
 
@@ -20,7 +22,7 @@ Older test suites and documentation taught us a lot, but the standard is its own
 
 ## Pass, warning or fail
 
-A **fail** means the function doesn't do its job. Wrong answers, made up results, functions that quietly do nothing and swapped arguments all land here, because a script relying on them would break.
+A **fail** means the function doesn't do its job. Wrong answers, made up results, functions that do nothing and swapped arguments all fail, because a script relying on them would break.
 
 A **warning** means the function works, but differently from what we recommend. Scripts will almost always run fine, and warnings don't lower the score.
 
@@ -32,7 +34,7 @@ Bad input is anything a function can't use: the wrong type, like a number where 
 
 Signals and Instances are both userdata, but a signal where an Instance belongs is still the wrong type. Checking only that the value is userdata isn't enough.
 
-Lookups and yes or no questions are different. When a lookup has nothing to find, like a missing file, a script that isn't running or the constants of a C function, `nil`, `false` or an empty table is an honest answer, the same way `FindFirstChild` returns `nil`. A yes or no question like `iscclosure` can answer `false` for a number, because that's true. Erroring and returning nothing both pass there.
+Lookups and yes or no questions are different. When a lookup has nothing to find, like a missing file, a script that isn't running or the constants of a C function, `nil`, `false` or an empty table is a correct answer, the same way `FindFirstChild` returns `nil`. A yes or no question like `iscclosure` can answer `false` for a number, because that's true. Erroring and returning nothing both pass there.
 
 Everywhere else erroring is the better answer, because it points straight at the problem. A wrong type, like a number where an Instance belongs, is a bug in the script, and a function that changes something should say when it couldn't. Returning nothing there is a warning.
 
@@ -57,10 +59,10 @@ Being common in other test suites doesn't make something a fail. What matters is
 
 - **It has to work.** A stub that does nothing or errors on every call is a fail. A function that isn't there is reported as missing.
 - **Its results have to be real.** A hardcoded value that only looks right for the test's input is a fail.
-- **It has to look native.** Anything marked `[C]` stays `[C]`, even after it's hooked. Hooks, `newcclosure`, `gethui` and drawings are also checked from a real game script in TT's place, since that's who they're meant to fool.
+- **It has to look native.** Anything marked `[C]` stays `[C]`, even after it's hooked. Hooks, `newcclosure`, `gethui`, drawings, signals and the environment are also checked from a real game script in TT's place, since that's who they're meant to fool.
 - **It has to work on game code.** A debug function should handle game scripts as well as the executor's own closures.
 - **It can't freeze the game.** A slow request or a big file can yield, but the client keeps running.
-- **Its errors should read cleanly.** Real Roblox functions don't add line numbers to their errors, so a wrapper that adds one gets a warning.
+- **Its errors should match Roblox's.** Real Roblox functions don't add line numbers to their errors, so a wrapper that adds one gets a warning.
 
 ## What's left out
 

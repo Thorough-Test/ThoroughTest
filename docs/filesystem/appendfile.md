@@ -31,7 +31,7 @@ print(readfile("log.txt"))
 - Add to the file without overwriting it.
 - Change nothing when the data is an empty string.
 - Create the file if it's missing.
-- Keep binary data intact.
+- Append binary data without changing it.
 - Leave a folder alone when given its path.
 
 ## Should

@@ -25,7 +25,7 @@ Game scripts can't read `CoreGui` directly, but `ContentProvider:PreloadAsync({ 
 local ContentProvider = game:GetService("ContentProvider")
 task.wait(10)
 ContentProvider:PreloadAsync({ game }, function(Content)
-    if Content == "rbxassetid://123456789" then
+    if Content == "rbxassetid://8126452931" then
         print("found it")
     end
 end)
@@ -36,7 +36,7 @@ Then run this from the executor within 10 seconds:
 ```luau
 local Screen = Instance.new("ScreenGui")
 local Image = Instance.new("ImageLabel")
-Image.Image = "rbxassetid://123456789"
+Image.Image = "rbxassetid://8126452931"
 Image.Parent = Screen
 Screen.Parent = gethui()
 ```
@@ -49,8 +49,4 @@ Nothing should print. If you hook `PreloadAsync` to get there, the hook has to b
 - Accept UI as children.
 - Not be `PlayerGui`.
 - Hide its contents from a game script calling `game:GetDescendants()`, listening to `game.DescendantAdded` or calling `ContentProvider:PreloadAsync({ game })`.
-- If `PreloadAsync` is hooked to hide UI, leave no trace a game script can see: the same errors, raised by the same function, with no Luau code in its stack.
-
-## Should
-
-- Return a `BasePlayerGui` or a `Folder`, not a `ScreenGui`.
+- If `PreloadAsync` is hooked to hide UI, leave no trace a game script can see: the same errors, raised by the same function, with no Luau code in its stack. Hide only your own UI, keep the other items in the list, and keep reporting the images Roblox puts in `CoreGui`.

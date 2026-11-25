@@ -24,7 +24,7 @@ An iv makes the same text encrypt differently each time. Leave it out and a rand
 ```luau
 local Key = base64encode(string.rep("k", 32))
 
-local Encrypted, Iv = crypt.encrypt("secret text", Key)
+local Encrypted, Iv = crypt.encrypt("coins=1940", Key)
 print(Encrypted, Iv)
 ```
 

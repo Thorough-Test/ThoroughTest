@@ -20,18 +20,18 @@ Replaces a constant, so the function behaves as if its code had a different valu
 
 ```luau
 local function Greet()
-    return "hello"
+    return "sup"
 end
 
-local Index = table.find(debug.getconstants(Greet), "hello")
-debug.setconstant(Greet, Index, "goodbye")
+local Index = table.find(debug.getconstants(Greet), "sup")
+debug.setconstant(Greet, Index, "cya")
 
-print(Greet()) -- goodbye
+print(Greet()) -- cya
 ```
 
 ## Must
 
-- Change string and number constants so the function really uses the new value.
+- Change string and number constants so the function uses the new value.
 - Change a property name constant, so `game.Name` reads a different property.
 - Work with a stack level.
 - Never write past the last constant or to a C function.

@@ -25,9 +25,13 @@ local Actor = getactors()[1]
 
 run_on_actor(Actor, [[
     local name = ...
-    print("Hello from inside the actor,", name)
+    print("in actor", name)
 ]], game.Players.LocalPlayer.Name)
 ```
+
+### What a game script sees
+
+A game script can watch `DescendantAdded` and the Actor's children. Running code must add nothing it can find, like a script or a BindableEvent parented into the game.
 
 ## Must
 
@@ -36,6 +40,7 @@ run_on_actor(Actor, [[
 - Give the code access to the executor API, including `getgc`, `getgenv`, `getrawmetatable`, `getrenv`, `hookfunction`, `hookmetamethod`, `loadstring`, `newcclosure` and `restorefunction`.
 - Make hooking and restoring work inside the Actor.
 - Keep working after earlier code errored or failed to compile.
+- Add no instances that fire a game script's `DescendantAdded`.
 
 ## Should
 

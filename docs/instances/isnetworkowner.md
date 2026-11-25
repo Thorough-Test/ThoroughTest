@@ -24,7 +24,7 @@ print(isnetworkowner(Root)) -- true
 
 ## Must
 
-- Return `true` for your own character, every part of it, not just `HumanoidRootPart`. Ownership belongs to the whole assembly, so the Head and anything welded to you share the root's owner.
+- Return `true` for every part of your own character, `HumanoidRootPart` included. Ownership belongs to the whole assembly, so the Head and anything welded to you share the root's owner.
 - Never return `true` for something that isn't a part.
 
 ## Should

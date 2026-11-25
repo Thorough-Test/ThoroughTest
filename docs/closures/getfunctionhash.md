@@ -35,7 +35,7 @@ print(getfunctionhash(MakeCounter()) == getfunctionhash(MakeCounter())) -- true
 - Return a SHA384 hash as a 96 character hex string.
 - Return different hashes for functions with different instructions or constants.
 - Return the same hash for identical functions, closures of one function, clones, and the same source compiled twice.
-- Never return a made up hash for a C function.
+- Never return a made up hash for a C function. A `newcclosure` can return nothing or the hash of the function it wraps.
 
 ## Should
 

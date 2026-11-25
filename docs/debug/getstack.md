@@ -26,11 +26,11 @@ Compilers can move values around, so don't rely on a local being at a fixed inde
 ```luau
 local function Secret()
     local Password = {}
-    Password.Value = "swordfish"
+    Password.Value = "kx92fjq"
 
     for _, Value in debug.getstack(1) do
         if type(Value) == "table" then
-            print(Value.Value) -- swordfish
+            print(Value.Value) -- kx92fjq
         end
     end
 end

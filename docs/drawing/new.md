@@ -35,7 +35,7 @@ Call `Destroy` to remove a drawing. `__OBJECT_EXISTS` tells you if it's still al
 local Camera = workspace.CurrentCamera
 
 local Label = Drawing.new("Text")
-Label.Text = "Hello"
+Label.Text = "no"
 Label.Size = 24
 Label.Color = Color3.new(1, 1, 1)
 Label.Position = Camera.ViewportSize / 2 - Label.TextBounds / 2
@@ -53,6 +53,10 @@ Image.Visible = true
 repeat task.wait() until Image.Loaded
 print("ready")
 ```
+
+### What a game script sees
+
+Drawings aren't Instances, so a game script has nothing to find. A drawing built from Frames in hidden UI doesn't count, because `game.DescendantAdded` fires for each Frame and a game script listening to it finds them.
 
 ## Must
 

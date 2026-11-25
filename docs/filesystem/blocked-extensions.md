@@ -26,10 +26,8 @@ run.exe    (trailing space)
 ## Example
 
 ```luau
-local Blocked = pcall(writefile, "virus.exe", "payload")
-print(Blocked) -- false
-
-print(isfile("virus.exe")) -- false
+local Wrote = pcall(writefile, "virus.exe", "payload")
+print(Wrote) -- false
 ```
 
 ## Must
@@ -42,4 +40,3 @@ print(isfile("virus.exe")) -- false
 ## Should
 
 - Refuse containers that can carry programs: `.zip`, `.rar`, `.7z`, `.cab`, `.iso`, `.img` and `.xml`.
-- Return `false` from `isfile` for a blocked path, instead of erroring.

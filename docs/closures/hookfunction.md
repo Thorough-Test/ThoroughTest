@@ -33,7 +33,7 @@ end)
 
 ```luau
 local function GetPrice()
-    return 100
+    return 344
 end
 
 local OriginalGetPrice
@@ -41,7 +41,7 @@ OriginalGetPrice = hookfunction(GetPrice, function()
     return OriginalGetPrice() / 2
 end)
 
-print(GetPrice()) -- 50
+print(GetPrice()) -- 172
 ```
 
 ### Stacking hooks
@@ -50,7 +50,7 @@ Each hook's returned function is the layer below it, so a second hook calls the 
 
 ```luau
 local function Greet()
-    return "hello"
+    return "sup"
 end
 
 local FirstOriginal, SecondOriginal
@@ -61,7 +61,7 @@ SecondOriginal = hookfunction(Greet, function()
     return "2 " .. SecondOriginal()
 end)
 
-print(Greet()) -- 2 1 hello
+print(Greet()) -- 2 1 sup
 ```
 
 ### What a game script sees
@@ -124,11 +124,16 @@ restorefunction(Target)
 
 Both lines have to match. Hooks made with `newcclosure` have to pass this too.
 
+A game can also check its own functions. After you hook one, a new closure of the same function has to keep running the game's code, and `debug.info` on the hooked one should still show the game's source, line and name. It can time its own calls too, so a hook that only calls the original shouldn't make them much slower.
+
+A `pcall` inside your hook should catch errors the same way it does anywhere else. If one gets past it, the error reaches the game script that called the hooked function.
+
 ## Must
 
 - Work on every mix of Luau, `newcclosure` and C functions, as the target and as the hook.
 - Keep the target's closure type. A hooked C function still shows `[C]` in `debug.info`.
 - Hook the function itself, so existing references are hooked too.
+- Hook only the closure it's given. Other closures of the same function, existing or new, keep running their own code.
 - Return a function that still runs the original code, and only that code.
 - Let a hook with more upvalues than the target run.
 - Pass errors from the hook to the caller unchanged, including error objects.
@@ -139,12 +144,14 @@ Both lines have to match. Hooks made with `newcclosure` have to pass this too.
 - Hook functions inside running game scripts.
 - Run the hook when the engine calls the target, like a game script's signal handler firing, with the same arguments.
 - Look the same to a game script as the unhooked function: the same `debug.info`, the same error including the calling line at its start, raised by the hooked function itself, and no Luau code from the hook in the game script's stack.
+- Add no extra frames to a game script's stack, even C ones.
+- Keep a hooked Luau function's source, line, name, parameter count and vararg in `debug.info`, so a game script checking its own function doesn't see the hook's.
 - Change what the server receives when `FireServer` is hooked, without the original call also going through.
 
 ## Should
 
 - Return a function of the same closure type as the target.
+- Let a `pcall` inside a hook on a C function catch errors.
 - Return an original that doesn't add its own line number to error messages.
-- Keep a hooked Luau function's line and name in `debug.info`, so it doesn't show the hook's.
-- Add no extra frames to a game script's stack, even C ones.
+- Keep calls fast. A hook that only calls the original shouldn't make a game script's calls 6 times slower or more.
 - Error when the hook is missing or either argument isn't a function.

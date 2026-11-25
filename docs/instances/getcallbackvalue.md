@@ -20,10 +20,10 @@ Normally you can set a callback like `OnInvoke`, but you can't read it back. Thi
 ```luau
 local Bindable = Instance.new("BindableFunction")
 Bindable.OnInvoke = function()
-    return "hello"
+    return "sup"
 end
 
-print(getcallbackvalue(Bindable, "OnInvoke")()) -- hello
+print(getcallbackvalue(Bindable, "OnInvoke")()) -- sup
 ```
 
 ## Must

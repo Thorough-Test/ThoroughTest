@@ -10,7 +10,7 @@ Spot a mistake, a confusing sentence or an example that could be better? Please 
 
 **Fixing the docs.** Typos, clearer wording, better examples, a parameter that's described wrong. Open a pull request. No need to ask first.
 
-**Changing the standard.** Adding or removing a rule, or moving one between Must and Should, changes how every executor gets scored. These start as an issue. See [Changing the standard](#changing-the-standard).
+**Changing the standard.** Adding or removing a rule, or moving one between Must and Should, changes how every executor is scored. These start as an issue. See [Changing the standard](#changing-the-standard).
 
 Not sure which yours is? If the change would make an executor pass or fail differently, it's the second kind.
 
@@ -55,8 +55,12 @@ A paragraph or two on what it does and why someone would use it.
 ## Example
 
 ```luau
-print(functionname("hello")) -- true
+print(functionname("rimuru")) -- true
 ```
+
+### What a game script sees
+
+What a game script could check, and what it has to find.
 
 ## Must
 
@@ -69,6 +73,7 @@ print(functionname("hello")) -- true
 
 - The `#` title has to be the function's exact name.
 - Leave out **Parameters** if there aren't any, and **Should** if there's nothing to prefer.
+- Add **What a game script sees** when a game script could notice the function, like a hook changing an error message. Leave it out otherwise.
 - The `summary` has to make sense on its own, because the hover shows nothing else.
 
 ## Writing like a person
@@ -91,7 +96,7 @@ Pretend you're explaining this to a friend who writes scripts. They're smart, th
 
 ## Examples that earn their spot
 
-An example should show something someone would really do. A list of random calls with no point teaches nothing.
+An example should show something someone would do. A list of random calls with no point teaches nothing.
 
 - **Solve a small, real problem.** "Log every remote call" beats `hookfunction(a, b)`.
 - **Make it runnable.** Paste it into an executor and it should work as written.
@@ -104,28 +109,29 @@ Before and after beats a wall of comments:
 
 ```luau
 local function Greet()
-    return "hello"
+    return "sup"
 end
-print(Greet()) -- hello
+print(Greet()) -- sup
 
 hookfunction(Greet, function()
-    return "goodbye"
+    return "cya"
 end)
-print(Greet()) -- goodbye
+print(Greet()) -- cya
 ```
 
 ## Changing the standard
 
-Open an issue and answer these three things:
+Open an issue and answer these four things:
 
 1. **What should change?** The function and the rule, in plain words.
 2. **Who does it help?** A real script that breaks or gets harder without it.
-3. **Can executors do it?** If it's only possible on one, it probably doesn't belong.
+3. **Can a game notice it?** If a game script could tell the executor is there, say how.
+4. **Can executors do it?** If it's only possible on one, it probably doesn't belong.
 
 The project owner makes the final call on the standard, since one voice keeps the rules consistent. A good argument with a real example goes a long way, and "that's what another test does" doesn't go anywhere.
 
-The test code and anti-tamper checks stay private, so don't worry about those. Describing the rule is enough. If it gets accepted, the test gets written and the page gets updated together.
+The test code and anti-tamper checks stay private, so don't worry about those. Describing the rule is enough. If it's accepted, the test is written and the page is updated together.
 
 ## Credit
 
-There's no contributors page to keep up. Your name stays on your work in the GitHub history, which is the honest record of who did what.
+There's no contributors page to keep up. Your name stays on your work in the GitHub history, which already shows who did what.

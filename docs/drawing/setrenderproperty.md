@@ -21,7 +21,7 @@ Does the same thing as `drawing[property] = value`. It pairs with [getrenderprop
 ```luau
 local Circle = Drawing.new("Circle")
 
-for Property, Value in { Radius = 50, Visible = true } do
+for Property, Value in { Radius = 147, Visible = true } do
     setrenderproperty(Circle, Property, Value)
 end
 ```

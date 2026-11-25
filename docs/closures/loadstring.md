@@ -30,6 +30,10 @@ print(Chunk) -- nil
 print(Problem) -- MyChunk:1: Expected identifier when parsing expression, got <eof>
 ```
 
+### What a game script sees
+
+Roblox doesn't let game scripts compile code on the client, so `loadstring` errors for them. Your `loadstring` is for your scripts only. If the game's copy starts working, any game script can find out by trying it.
+
 ## Must
 
 - Compile valid code and run it with the right result, return values and arguments.
@@ -41,6 +45,7 @@ print(Problem) -- MyChunk:1: Expected identifier when parsing expression, got <e
 - Compile a 2MB script.
 - Run the chunk at the caller's thread identity.
 - Never load compiled bytecode.
+- Leave `loadstring` unusable for game scripts.
 
 ## Should
 

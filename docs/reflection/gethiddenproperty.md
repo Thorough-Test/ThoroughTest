@@ -5,7 +5,7 @@ summary: Reads a property that scripts normally can't.
 # gethiddenproperty
 
 ```luau
-gethiddenproperty(instance: Instance, property: string) -> (any, boolean)
+gethiddenproperty(object: Object, property: string) -> (any, boolean)
 ```
 
 Returns a property's value, and whether the property is hidden. It works on normal properties too, in which case the second value is `false`.
@@ -14,7 +14,7 @@ Reading a property this way doesn't make it scriptable, and it reads `BinaryStri
 
 ## Parameters
 
-- `instance`: The instance.
+- `object`: The instance, or another Object like an `EditableImage`.
 - `property`: The property's name.
 
 ## Example
@@ -33,9 +33,11 @@ print(gethiddenproperty(Part, "NetworkOwnerV3")) -- 0 true
 - Read `size_xml` on a `Fire`.
 - Leave a hidden property hidden after reading it.
 - Read `BinaryString` properties.
+- Read `AttributesSerialize` and `Tags` in Roblox's binary format.
+- Work on Objects that aren't Instances, like reading `ImageData` on an `EditableImage`.
 - Never return a value for a property that doesn't exist, or exists only on another class.
 
 ## Should
 
 - Return `NetworkOwnerV3` as a number.
-- Error when given something that isn't an instance.
+- Error when given something that isn't an Object.

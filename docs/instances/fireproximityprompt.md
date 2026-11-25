@@ -22,10 +22,14 @@ local Prompt = workspace.Door:FindFirstChildOfClass("ProximityPrompt")
 fireproximityprompt(Prompt)
 ```
 
+### What a game script sees
+
+A game script can listen to `Triggered` and to property changes on its own prompt. It should see the prompt trigger for the local player, with no change to the prompt's `Enabled`, `HoldDuration`, `MaxActivationDistance` or `RequiresLineOfSight` and no movement of its part, even for a frame.
+
 ## Must
 
 - Trigger from any distance, passing the local player.
-- Work on a prompt inside an Attachment, not just one directly in a part.
+- Work on a prompt inside an Attachment as well as one directly in a part.
 - Skip `HoldDuration`.
 - Fire without changing the prompt's properties, even for a moment, or moving the part.
 - Reach the server.

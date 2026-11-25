@@ -29,6 +29,10 @@ task.wait()
 firetouchinterest(Root, Coin, 1)
 ```
 
+### What a game script sees
+
+A game script can listen to `Touched` and `TouchEnded` on its own part, and to property changes on both parts. It should see the touch, with the part that was passed, and nothing else: no movement, and no change to `Size`, `CanTouch` or `CanCollide`, even for a frame.
+
 ## Must
 
 - Fire `Touched` with `0`, including the part that was passed.

@@ -22,8 +22,8 @@ Decrypts AES data. The data, key and iv are all base64, the same way [crypt.encr
 ```luau
 local Key = base64encode(string.rep("k", 32))
 
-local Encrypted, Iv = crypt.encrypt("secret text", Key)
-print(crypt.decrypt(Encrypted, Key, Iv, "CBC")) -- secret text
+local Encrypted, Iv = crypt.encrypt("coins=1940", Key)
+print(crypt.decrypt(Encrypted, Key, Iv, "CBC")) -- coins=1940
 ```
 
 ## Must

@@ -22,7 +22,7 @@ request(options: {
 
 Sends a request to any url and yields until the response arrives. Unlike `HttpService`, it can reach any site and send any header. The game keeps running while it waits.
 
-A response like `404` isn't an error. It returns a normal response with `Success` set to `false`.
+A `404` or any other error status returns a normal response with `Success` set to `false`.
 
 `http_request` and `http.request` are the same function under other names.
 
@@ -50,7 +50,7 @@ local Response = request({
     Url = "https://httpbin.org/post",
     Method = "POST",
     Headers = { ["Content-Type"] = "application/json" },
-    Body = game:GetService("HttpService"):JSONEncode({ Score = 100 }),
+    Body = game:GetService("HttpService"):JSONEncode({ Score = 2860 }),
 })
 ```
 
@@ -62,7 +62,7 @@ local Response = request({
 - Return error statuses as responses, with `Success` set to `false`.
 - Return response headers.
 - Keep the game running while it waits.
-- Keep binary data intact in both directions.
+- Send and receive binary data without changing it.
 - Follow redirects, and decompress gzip when it asked for gzip.
 - Never report success for an invalid url.
 

@@ -28,7 +28,7 @@ Connects to a `ws://` or `wss://` server and yields until it's ready. If it can'
 local Socket = WebSocket.connect("wss://ws.postman-echo.com/raw")
 
 Socket.OnMessage:Connect(function(Message)
-    print("Got:", Message) -- Got: hello
+    print("Got:", Message) -- Got: ping
     Socket:Close()
 end)
 
@@ -36,7 +36,7 @@ Socket.OnClose:Connect(function()
     print("Closed")
 end)
 
-Socket:Send("hello")
+Socket:Send("ping")
 ```
 
 ## Must
@@ -45,13 +45,16 @@ Socket:Send("hello")
 - Have `Send`, `Close`, `OnMessage` and `OnClose`.
 - Deliver messages without marking text as binary.
 - Keep messages in order, even when they're sent one right after another.
-- Keep unicode intact.
+- Send and receive unicode without changing it.
 - Fire `OnClose` exactly once.
 - Have `IsClosed`, starting as `false` and set to `true` after closing.
 - Handle a 60KB message.
+- Send binary data, bytes that aren't valid UTF-8, without closing the connection, and get it back unchanged.
 - Never return a socket for an invalid url, or when nothing is listening.
 
 ## Should
 
 - Error on an invalid url, instead of returning nothing.
 - Let a second `Close` do nothing.
+- Send binary data, instead of erroring.
+- Fire `OnMessage` with `true` for a binary message.

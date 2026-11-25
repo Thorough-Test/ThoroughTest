@@ -24,7 +24,7 @@ loadstring(game:HttpGet("https://thoroughtest.lol/script"))()
 | `crashLog` | boolean | `false` | Saves the current step to a file while it runs. |
 | `copyLink` | boolean | `true` | Copies the results link to your clipboard. |
 
-TT warns you about a setting or a name it doesn't recognize, so a typo won't quietly run the wrong thing.
+TT warns you about a setting or a name it doesn't recognize, so you can catch typos.
 
 > **Note:** A run with `only`, `skip`, or one cut short by `stopOnFail` is a partial run. It works the same way but nothing is uploaded, because a score from half the tests wouldn't mean anything.
 

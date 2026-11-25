@@ -39,7 +39,7 @@ print(Coins) -- 501
 - Change the upvalue in every function that shares it.
 - Work with a stack level.
 - Write to functions from game scripts.
-- Never write past the last upvalue, to a function with none, or to a C function.
+- Never write past the last upvalue, to a function with none, or to a C function like `print`. Writing a `newcclosure` wrapper's upvalue may replace the function it wraps, since that is its real upvalue.
 
 ## Should
 

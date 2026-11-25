@@ -26,7 +26,7 @@ writefile("settings.json", HttpService:JSONEncode({ Volume = 0.5 }))
 ## Must
 
 - Write exactly the data given, and replace old data completely.
-- Keep binary data intact.
+- Write binary data without changing it.
 - Write a 5MB file in full.
 - Make every write readable right away, 200 times in a row.
 - Create all 200 files when they're written in a row.
