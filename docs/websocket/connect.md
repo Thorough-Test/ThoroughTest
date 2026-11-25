@@ -49,12 +49,9 @@ Socket:Send("ping")
 - Fire `OnClose` exactly once.
 - Have `IsClosed`, starting as `false` and set to `true` after closing.
 - Handle a 60KB message.
-- Send binary data, bytes that aren't valid UTF-8, without closing the connection, and get it back unchanged.
 - Never return a socket for an invalid url, or when nothing is listening.
 
 ## Should
 
 - Error on an invalid url, instead of returning nothing.
 - Let a second `Close` do nothing.
-- Send binary data, instead of erroring.
-- Fire `OnMessage` with `true` for a binary message.
